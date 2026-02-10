@@ -1,29 +1,30 @@
 import type { ServiceIconGridContent } from "@/types"
 
 export const whyUsContent: ServiceIconGridContent = {
-  tagline: "Dlaczego warto",
-  title: "Wybierz sprawdzonego fachowca",
-  subtitle: "",
+  tagline: "Dlaczego my",
+  title: "Dzwonisz do właściciela, nie do biura",
+  subtitle: "Jestem Ryszard Kozioł, właściciel El-Klim. Mam sprawdzoną ekipę monterów. Zadzwonisz - ja odbiorę. Przyjadę osobiście, obejrzę dach, powiem ile kW potrzebujesz i ile to będzie kosztować.",
   services: [
     {
-      icon: "Handshake",
-      title: "Solidne wykonanie",
-      description: "Każdy projekt realizuję osobiście, z pełnym zaangażowaniem. Nie zostawiam niedoróbek.",
+      icon: "Phone",
+      title: "Bezpośredni kontakt z właścicielem",
+      description: "Nie mam call center ani biura obsługi. Dzwonisz pod 692 243 186 - ja odbieram. Właściciel, nie konsultant. Szybkie decyzje, bez czekania.",
+      quote: "Pan Ryszard doradził najlepsze rozwiązanie dla naszego domu.",
+      quoteAuthor: "Małgorzata W.",
     },
     {
-      icon: "Clock",
-      title: "Terminowość",
-      description: "Ustalam realny termin i go dotrzymuję. Wiem, jak ważne jest planowanie przeprowadzki.",
+      icon: "Sun",
+      title: "Od domu po farmę",
+      description: "Montujemy instalacje na dachach domów jednorodzinnych, budynkach firmowych, halach i farmach naziemnych. Szkoła Podstawowa w Klęczanach? Też nasza robota.",
+      quote: "Fotowoltaika 10 kW na firmie... profesjonalne podejście od początku do końca.",
+      quoteAuthor: "Andrzej S.",
     },
     {
-      icon: "Wrench",
-      title: "Kompleksowa obsługa",
-      description: "Od gładzi przez malowanie po montaż paneli i płytek. Jeden wykonawca zamiast kilku ekip.",
-    },
-    {
-      icon: "MapPin",
-      title: "Lokalny fachowiec",
-      description: "Działam w regionie Kazimierzy Wielkiej. Szybki dojazd, znajomość lokalnych dostawców.",
+      icon: "Zap",
+      title: "Efekty, które widzisz",
+      description: "Cel jest prosty: rachunki za prąd mają spaść. Dobieramy instalacje do Twojego zużycia, żebyś płacił mniej - albo wcale.",
+      quote: "Rachunki za prąd praktycznie zerowe. Instalacja zwraca się szybciej niż myślałem.",
+      quoteAuthor: "Tomasz K.",
     },
   ],
 }

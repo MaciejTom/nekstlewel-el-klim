@@ -89,7 +89,8 @@ export function ControlPanel() {
   const [mutedColor, setMutedColor] = useState('#262626')
   const [borderColor, setBorderColor] = useState('#404040')
 
-  const [currentFont, setCurrentFont] = useState('Space Grotesk')
+  const [headingFont, setHeadingFont] = useState('Manrope')
+  const [bodyFont, setBodyFont] = useState('Open Sans')
   const [radius, setRadius] = useState('0.5rem')
   const [shadowIntensity, setShadowIntensity] = useState('normal')
   const [activePreset, setActivePreset] = useState('Warm Classic')
@@ -113,12 +114,15 @@ export function ControlPanel() {
   }, [bgColor, fgColor, primaryColor, mutedColor, borderColor])
 
   useEffect(() => {
-    const font = FONT_OPTIONS.find(f => f.name === currentFont)
-    if (font) {
-      document.documentElement.style.setProperty('--body-font', font.family)
-      document.documentElement.style.setProperty('--heading-font', font.family)
+    const heading = FONT_OPTIONS.find(f => f.name === headingFont)
+    const body = FONT_OPTIONS.find(f => f.name === bodyFont)
+    if (heading) {
+      document.documentElement.style.setProperty('--heading-font', heading.family)
     }
-  }, [currentFont])
+    if (body) {
+      document.documentElement.style.setProperty('--body-font', body.family)
+    }
+  }, [headingFont, bodyFont])
 
   useEffect(() => {
     document.documentElement.style.setProperty('--radius', radius)
@@ -146,7 +150,8 @@ export function ControlPanel() {
     setPrimaryColor(preset.primary)
     setMutedColor(preset.muted)
     setBorderColor(preset.border)
-    setCurrentFont(preset.font)
+    setHeadingFont(preset.font)
+    setBodyFont(preset.font)
     setActivePreset(preset.name)
   }
 
@@ -171,7 +176,8 @@ export function ControlPanel() {
       primary: primaryColor,
       muted: mutedColor,
       border: borderColor,
-      font: currentFont,
+      headingFont,
+      bodyFont,
       radius,
       shadow: shadowIntensity,
     }
@@ -181,7 +187,8 @@ export function ControlPanel() {
 --primary: ${primaryColor};
 --muted: ${mutedColor};
 --border: ${borderColor};
---heading-font: '${currentFont}';
+--heading-font: '${headingFont}';
+--body-font: '${bodyFont}';
 --radius: ${radius};`
 
     navigator.clipboard.writeText(css)
@@ -335,16 +342,20 @@ export function ControlPanel() {
 
           {activeTab === 'typography' && (
             <div className="space-y-4">
+              {/* NAGŁÓWKI */}
               <div className="space-y-2">
-                <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">Sans-serif nowoczesne</h3>
-                <div className="grid grid-cols-2 gap-1.5">
-                  {FONT_OPTIONS.filter(f => f.category === 'sans').slice(0, 8).map((font) => (
+                <div className="flex items-center justify-between">
+                  <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">Font nagłówków (H1, H2...)</h3>
+                  <span className="text-[10px] text-primary font-medium">{headingFont}</span>
+                </div>
+                <div className="grid grid-cols-3 gap-1">
+                  {FONT_OPTIONS.map((font) => (
                     <button
-                      key={font.name}
-                      onClick={() => { setCurrentFont(font.name); setActivePreset('') }}
-                      className={`px-2 py-1.5 text-[11px] font-medium border rounded transition-all ${
-                        currentFont === font.name
-                          ? 'bg-white text-black border-white'
+                      key={`h-${font.name}`}
+                      onClick={() => { setHeadingFont(font.name); setActivePreset('') }}
+                      className={`px-1.5 py-1 text-[10px] font-medium border rounded transition-all ${
+                        headingFont === font.name
+                          ? 'bg-primary text-white border-primary'
                           : 'bg-white/5 text-white border-white/20 hover:bg-white/10'
                       }`}
                       style={{ fontFamily: font.family }}
@@ -355,16 +366,20 @@ export function ControlPanel() {
                 </div>
               </div>
 
+              {/* BODY */}
               <div className="space-y-2">
-                <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">Sans-serif klasyczne</h3>
-                <div className="grid grid-cols-2 gap-1.5">
-                  {FONT_OPTIONS.filter(f => f.category === 'sans').slice(8).map((font) => (
+                <div className="flex items-center justify-between">
+                  <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">Font tekstu (body)</h3>
+                  <span className="text-[10px] text-primary font-medium">{bodyFont}</span>
+                </div>
+                <div className="grid grid-cols-3 gap-1">
+                  {FONT_OPTIONS.map((font) => (
                     <button
-                      key={font.name}
-                      onClick={() => { setCurrentFont(font.name); setActivePreset('') }}
-                      className={`px-2 py-1.5 text-[11px] font-medium border rounded transition-all ${
-                        currentFont === font.name
-                          ? 'bg-white text-black border-white'
+                      key={`b-${font.name}`}
+                      onClick={() => { setBodyFont(font.name); setActivePreset('') }}
+                      className={`px-1.5 py-1 text-[10px] font-medium border rounded transition-all ${
+                        bodyFont === font.name
+                          ? 'bg-primary text-white border-primary'
                           : 'bg-white/5 text-white border-white/20 hover:bg-white/10'
                       }`}
                       style={{ fontFamily: font.family }}
@@ -375,49 +390,15 @@ export function ControlPanel() {
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">Display / Nagłówkowe</h3>
-                <div className="grid grid-cols-2 gap-1.5">
-                  {FONT_OPTIONS.filter(f => f.category === 'display').map((font) => (
-                    <button
-                      key={font.name}
-                      onClick={() => { setCurrentFont(font.name); setActivePreset('') }}
-                      className={`px-2 py-1.5 text-[11px] font-medium border rounded transition-all ${
-                        currentFont === font.name
-                          ? 'bg-white text-black border-white'
-                          : 'bg-white/5 text-white border-white/20 hover:bg-white/10'
-                      }`}
-                      style={{ fontFamily: font.family }}
-                    >
-                      {font.name}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">Serif / Eleganckie</h3>
-                <div className="grid grid-cols-2 gap-1.5">
-                  {FONT_OPTIONS.filter(f => f.category === 'serif').map((font) => (
-                    <button
-                      key={font.name}
-                      onClick={() => { setCurrentFont(font.name); setActivePreset('') }}
-                      className={`px-2 py-1.5 text-[11px] font-medium border rounded transition-all ${
-                        currentFont === font.name
-                          ? 'bg-white text-black border-white'
-                          : 'bg-white/5 text-white border-white/20 hover:bg-white/10'
-                      }`}
-                      style={{ fontFamily: font.family }}
-                    >
-                      {font.name}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="p-3 bg-white/5 rounded-lg">
-                <p className="text-[10px] text-white/50 mb-1">Aktywna czcionka:</p>
-                <p className="text-lg font-bold" style={{ fontFamily: FONT_OPTIONS.find(f => f.name === currentFont)?.family }}>{currentFont}</p>
+              {/* PODGLĄD */}
+              <div className="p-3 bg-white/5 rounded-lg space-y-2">
+                <p className="text-[10px] text-white/50">Podgląd:</p>
+                <p className="text-xl font-bold" style={{ fontFamily: FONT_OPTIONS.find(f => f.name === headingFont)?.family }}>
+                  Nagłówek ({headingFont})
+                </p>
+                <p className="text-sm" style={{ fontFamily: FONT_OPTIONS.find(f => f.name === bodyFont)?.family }}>
+                  Tekst paragrafowy w foncie {bodyFont}. Lorem ipsum dolor sit amet.
+                </p>
               </div>
             </div>
           )}
@@ -516,17 +497,11 @@ export function ControlPanel() {
           </div>
 
           <div className="pt-3 border-t border-white/20 text-center">
-            <p className="text-[10px] text-white/30 uppercase tracking-widest">LECH-BUD Design System</p>
+            <p className="text-[10px] text-white/30 uppercase tracking-widest">Design System</p>
           </div>
         </div>
       </div>
 
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/20 z-40"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
     </>
   )
 }

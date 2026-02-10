@@ -5,28 +5,25 @@ export const reviewsContent: ReviewsContent = {
   reviews: [
     {
       rating: 5,
-      quote:
-        "Kamil wykończył nam całe mieszkanie pod klucz. Wszystko terminowo, czysto i zgodnie z ustaleniami. Gładzie idealne, płytki położone perfekcyjnie. Polecam!",
-      authorName: "Anna M.",
-      authorLabel: "Mieszkanie 55m², Kazimierza Wielka",
+      quote: "Instalacja fotowoltaiczna wykonana solidnie i terminowo. Rachunki za prąd praktycznie zerowe - to mówi samo za siebie.",
+      authorName: "Tomasz K.",
+      authorLabel: "Fotowoltaika domowa",
       featured: true,
     },
     {
       rating: 5,
-      quote:
-        "Solidna robota, uczciwe podejście. Pan Kamil doradził w wyborze materiałów i zaoszczędziliśmy sporo. Remont łazienki trwał tydzień - wszystko sprawnie.",
-      authorName: "Piotr K.",
-      authorLabel: "Remont łazienki, Pińczów",
+      quote: "Montaż instalacji elektrycznej w nowym domu. Wszystko zrobione terminowo, pan Ryszard doradził w kilku kwestiach technicznych.",
+      authorName: "Małgorzata W.",
+      authorLabel: "Instalacja elektryczna",
     },
     {
       rating: 5,
-      quote:
-        "Profesjonalne podejście od początku do końca. Czysto, terminowo, bez niespodzianek. Na pewno wrócę przy kolejnym remoncie.",
-      authorName: "Marta W.",
-      authorLabel: "Gładzie i malowanie, Busko-Zdrój",
+      quote: "Fotowoltaika 10 kW na firmie. Profesjonalne podejście od wyceny po uruchomienie. Polecam.",
+      authorName: "Andrzej S.",
+      authorLabel: "Instalacja firmowa",
     },
   ],
   bottomLink: {
-    text: "Zadowoleni klienci to najlepsza rekomendacja",
+    text: "Kilka opinii od osób, które nam zaufały",
   },
 }

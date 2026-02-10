@@ -1,10 +1,10 @@
 export const heroContent = {
-  badge: "Świętokrzyskie",
-  headline: "Zamień surowe ściany\nw wymarzony dom",
-  headlineAccent: "w wymarzony dom",
-  subtitle: "Wykończenia wnętrz w województwie świętokrzyskim. Od pierwszej gładzi po ostatni włącznik — zajmuję się wszystkim, żebyś Ty mógł się tylko wprowadzić.",
+  badge: "Fotowoltaika | Elektryka | SAP | Odgromowe",
+  headline: "Mała firma,\nduże realizacje.",
+  headlineAccent: "duże realizacje.",
+  subtitle: "Dzwonisz do właściciela, nie do call center. Ja wyceniam, ekipa montuje, ja odpowiadam. Od domu po farmę PV. Gorlice i okolice.",
   ctaPrimary: {
-    text: "Zadzwoń: 123 456 789",
+    text: "Zadzwoń: 692 243 186",
   },
   ctaSecondary: {
     text: "Zobacz realizacje",

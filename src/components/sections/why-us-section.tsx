@@ -4,13 +4,14 @@ import Image from "next/image"
 import { whyUsContent as defaultWhyUsContent } from "@/content/remonter/why-us"
 
 const defaultIconImageMap: Record<string, string> = {
-  Clock: "/images/lech-bud/Whisk_c259a637d38e05184f441dba9d60e8b9dr-removebg-preview.png",
-  ShieldCheck: "/images/lech-bud/Whisk_0ff055529f5e3bbad9e46ad59dc41e6adr-removebg-preview (1).png",
-  Building2: "/images/lech-bud/Whisk_5a4e3a2f16e5378a518405bddd9d228fdr-removebg-preview.png",
-  CalendarCheck: "/images/lech-bud/checks.png",
-  Handshake: "/images/lech-bud/Whisk_0ff055529f5e3bbad9e46ad59dc41e6adr-removebg-preview (1).png",
-  Wrench: "/images/lech-bud/Whisk_5a4e3a2f16e5378a518405bddd9d228fdr-removebg-preview.png",
-  MapPin: "/images/lech-bud/checks.png",
+  Clock: "/images/remonter/icons/4-removebg-preview.webp",
+  ShieldCheck: "/images/remonter/icons/Whisk_142f20ca50ad58f8f334cc4ab808b9fedr-removebg-preview.webp",
+  Handshake: "/images/remonter/icons/Whisk_142f20ca50ad58f8f334cc4ab808b9fedr-removebg-preview.webp",
+  Wrench: "/images/remonter/icons/3-removebg-preview.webp",
+  MapPin: "/images/remonter/icons/2-removebg-preview.webp",
+  Phone: "/images/remonter/icons/Whisk_142f20ca50ad58f8f334cc4ab808b9fedr-removebg-preview.webp",
+  Sun: "/images/remonter/icons/4-removebg-preview.webp",
+  Zap: "/images/remonter/icons/3-removebg-preview.webp",
 }
 
 interface WhyUsSectionProps {
@@ -40,7 +41,7 @@ export function WhyUsSection({
         </div>
 
         {/* USP grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
           {whyUsContent.services.map((usp, index) => {
             const iconSrc = iconImageMap[usp.icon] || iconImageMap.Clock
 

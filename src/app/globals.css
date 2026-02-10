@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 /* =============================================
-   TRUST BLUE THEME
-   White + Blue accent - dla instalacji, fotowoltaiki
+   INDUSTRIAL YELLOW THEME
+   Dark + Yellow accent - dla fotowoltaiki, energii
    ============================================= */
 
 :root {
@@ -10,26 +10,26 @@
   --body-font: 'Open Sans', ui-sans-serif, system-ui, sans-serif;
   --heading-font: 'Manrope', ui-sans-serif, system-ui, sans-serif;
 
-  --background: #ffffff;
-  --foreground: #1e3a5f;
-  --card: #f8fafc;
-  --card-foreground: #1e3a5f;
-  --popover: #ffffff;
-  --popover-foreground: #1e3a5f;
-  --primary: #2563eb;
-  --primary-foreground: #ffffff;
-  --secondary: #f1f5f9;
-  --secondary-foreground: #1e3a5f;
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
-  --accent: #dbeafe;
-  --accent-foreground: #1e3a5f;
+  --background: #171717;
+  --foreground: #fafafa;
+  --card: #171717;
+  --card-foreground: #fafafa;
+  --popover: #171717;
+  --popover-foreground: #fafafa;
+  --primary: #eab308;
+  --primary-foreground: #171717;
+  --secondary: #262626;
+  --secondary-foreground: #fafafa;
+  --muted: #262626;
+  --muted-foreground: #a3a3a3;
+  --accent: #262626;
+  --accent-foreground: #fafafa;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #2563eb;
-  --gold: #2563eb;                /* blue-600 - brand accent */
+  --border: #404040;
+  --input: #404040;
+  --ring: #eab308;
+  --gold: #eab308;                /* yellow-500 - brand accent */
   --chart-1: #e63946;
   --chart-2: #1d3557;
   --chart-3: #457b9d;

@@ -1,34 +1,30 @@
 export const faqContent = {
-  title: "Najczęstsze pytania",
+  title: "Często zadawane pytania",
   subtitle: "Odpowiedzi na pytania, które zadają klienci przed rozpoczęciem współpracy.",
   items: [
     {
-      question: "Jaki jest orientacyjny koszt wykończenia mieszkania pod klucz?",
-      answer: "Koszt zależy od standardu wykończenia i zakresu prac. Ceny zaczynają się od około 800-1000 zł/m² w standardzie ekonomicznym, do 1500+ zł/m² w podwyższonym. Dokładną wycenę przygotowuję po oględzinach.",
+      question: "Ile kosztuje instalacja fotowoltaiczna?",
+      answer: "Cena zależy od mocy instalacji i warunków montażu. Typowa instalacja domowa (5-10 kW) to kilkadziesiąt tysięcy złotych. Zadzwoń - przyjadę osobiście, obejrzę i podam konkretną kwotę. Bez \"od-do\".",
     },
     {
-      question: "Czy pomagasz w wyborze materiałów?",
-      answer: "Tak, doradzam przy wyborze materiałów. Znam lokalne składy budowlane i mogę polecić sprawdzone produkty w różnych przedziałach cenowych.",
+      question: "Jak długo trwa montaż?",
+      answer: "Dom jednorodzinny to zazwyczaj 1-2 dni robocze. Większe instalacje firmowe lub farmy - kilka dni. Dokładny termin ustalamy po oględzinach.",
     },
     {
-      question: "Jak długo trwa wykończenie mieszkania?",
-      answer: "Mieszkanie 50m² wykańczam zazwyczaj w 4-6 tygodni. Czas zależy od zakresu prac i dostępności materiałów.",
+      question: "Czy pomagacie z dotacjami?",
+      answer: "Tak, doradzimy jakie programy są dostępne (Mój Prąd, ulga termomodernizacyjna). Przygotowujemy dokumentację potrzebną do wniosku.",
     },
     {
-      question: "Czy zapewniasz materiały, czy mam kupować sam?",
-      answer: "Mogę zorganizować zakup i transport materiałów lub pracować na materiałach dostarczonych przez klienta - jak wygodniej.",
+      question: "Na jaki obszar dojeżdżacie?",
+      answer: "Gorlice i okolice - powiat gorlicki, jasielski, część nowosądeckiego. Przy większych projektach możemy dojechać dalej. Zadzwoń, ustalmy.",
     },
     {
-      question: "Na jakim terenie działasz?",
-      answer: "Głównie okolice Kazimierzy Wielkiej, Pińczowa, Buska-Zdroju, Proszowic. W przypadku większych zleceń dojadę dalej.",
+      question: "Macie więcej opinii w Google?",
+      answer: "Na stronie są 4 opinie. Mamy też referencje od klientów, których instalacje możesz zobaczyć na zdjęciach. Jeśli chcesz - podamy kontakt do kogoś, kto potwierdzi jakość naszej pracy.",
     },
     {
-      question: "Czy wystawiasz fakturę?",
-      answer: "Tak, prowadzę działalność gospodarczą i wystawiam faktury VAT.",
-    },
-    {
-      question: "Czy udzielasz gwarancji na wykonane prace?",
-      answer: "Tak, udzielam gwarancji na robociznę. Standardowo 24 miesiące na wszystkie wykonane prace.",
+      question: "Jak długo działacie na rynku?",
+      answer: "Doświadczenie mamy, ale nie podajemy lat na stronie - bo to nie gwarancja jakości. Gwarancją są zrealizowane instalacje: farmy, szkoła publiczna, budynki komercyjne. Zobacz zdjęcia, zadzwoń, porozmawiajmy.",
     },
   ],
 }

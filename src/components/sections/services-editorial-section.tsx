@@ -1,6 +1,6 @@
 import Image from "next/image"
 import type { ServiceEditorialContent } from "@/types"
-import { Home, Hammer, Paintbrush, Bath, Layers, CheckCircle, Phone } from "lucide-react"
+import { Home, Hammer, Paintbrush, Bath, Layers, Check, Phone } from "lucide-react"
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   home: Home,
@@ -57,7 +57,8 @@ const s = {
   featureListReverse: "space-y-4 flex flex-col lg:items-end",
   featureItem: "flex items-center gap-3 p-2 hover:bg-muted/50 transition-colors -ml-2 pl-2",
   featureItemReverse: "flex items-center gap-3 lg:flex-row-reverse p-2 hover:bg-muted/50 transition-colors -mr-2 pr-2",
-  featureIcon: "text-primary w-5 h-5 mt-0.5 flex-shrink-0",
+  featureIconWrap: "w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0",
+  featureIcon: "text-primary-foreground w-3 h-3 stroke-[3]",
   featureText: "font-medium text-foreground/90",
 
   // CTA
@@ -135,7 +136,9 @@ export function ServicesEditorialSection({ content, className, id }: ServicesEdi
                   <ul className={isEven ? s.featureListReverse : s.featureList}>
                     {service.features.map((feature, i) => (
                       <li key={i} className={isEven ? s.featureItemReverse : s.featureItem}>
-                        <CheckCircle className={s.featureIcon} />
+                        <span className={s.featureIconWrap}>
+                          <Check className={s.featureIcon} />
+                        </span>
                         <span className={s.featureText}>{feature}</span>
                       </li>
                     ))}

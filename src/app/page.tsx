@@ -5,6 +5,8 @@ import { useState } from "react"
 // Sections - reusing from shared components
 import { NavSection } from "@/components/sections/nav-section"
 import { HeroSection } from "@/components/sections/hero-section"
+import { HeroSplitSection } from "@/components/sections/hero-split-section"
+import { HeroSplitClean } from "@/components/sections/hero-split-clean"
 import { WhyUsSection } from "@/components/sections/why-us-section"
 import { ServicesEditorialSection } from "@/components/sections/services-editorial-section"
 import { GallerySection } from "@/components/sections/gallery-section"
@@ -36,11 +38,11 @@ const BRAND = {
   phone: "692243186",
   phoneFormatted: "692 243 186",
   homeHref: "/",
-  description: "Fotowoltaika, instalacje elektryczne, teletechniczne, systemy sygnalizacji pożaru i oddymiania. Profesjonalny montaż i serwis.",
-  badge: "Montaż i serwis",
-  copyright: "EL-KLIM",
+  description: "Mała firma, duże realizacje. Fotowoltaika i elektryka w Gorlicach. Od domu po farmę PV.",
+  badge: "Fotowoltaika | Elektryka",
+  copyright: "EL-KLIM Ryszard Kozioł",
   whatsappNumber: "48692243186",
-  location: "Cała Polska",
+  location: "Gorlice i okolice",
 }
 
 export default function RemonterPage() {
@@ -82,13 +84,17 @@ export default function RemonterPage() {
           phoneFormatted={BRAND.phoneFormatted}
           homeHref={BRAND.homeHref}
         />
-        <HeroSection
-          content={heroContent}
-          heroImages={[
-            "/images/el-klim/1.jpg",
-          ]}
-          heroImageAlt="EL-KLIM - fotowoltaika i instalacje elektryczne"
+        <HeroSplitSection
+          headline={heroContent.headline}
+          headlineAccent={heroContent.headlineAccent}
+          region="Gorlice i okolice"
+          description={heroContent.subtitle}
+          ctaPrimary={{ text: "Zadzwoń: 692 243 186", href: "#kontakt" }}
+          ctaSecondary={{ text: "Zobacz realizacje", href: "#realizacje" }}
+          image="/images/el-klim/hero2.jpg"
+          imageAlt="EL-KLIM - fotowoltaika i instalacje elektryczne"
           phone={BRAND.phone}
+          badge={heroContent.badge}
         />
         <WhyUsSection
           content={whyUsContent}
