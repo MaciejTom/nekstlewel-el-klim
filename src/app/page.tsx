@@ -16,6 +16,7 @@ import { FooterSection } from "@/components/sections/footer-section"
 
 // UI Components
 import { Lightbox } from "@/components/ui/lightbox"
+import { ControlPanel } from "@/components/ui/control-panel"
 
 // Content - remonter specific
 import { heroContent } from "@/content/remonter/hero"
@@ -29,17 +30,17 @@ import { reviewsContent } from "@/content/remonter/reviews"
 
 // Config
 const BRAND = {
-  name: "REMONTER",
-  letter: "R",
-  logo: "/images/remonter/logo.webp",
-  phone: "123456789",
-  phoneFormatted: "123 456 789",
+  name: "EL-KLIM",
+  letter: "E",
+  logo: "/images/el-klim/1.jpg",
+  phone: "692243186",
+  phoneFormatted: "692 243 186",
   homeHref: "/",
-  description: "Kompleksowe wykończenia mieszkań i domów pod klucz. Remonty, gładzie, malowanie, płytki, podłogi. Kazimierza Wielka i okolice.",
-  badge: "Wykończenia pod klucz",
-  copyright: "REMONTER Kamil Makieła",
-  whatsappNumber: "48123456789",
-  location: "Kazimierza Wielka i okolice",
+  description: "Fotowoltaika, instalacje elektryczne, teletechniczne, systemy sygnalizacji pożaru i oddymiania. Profesjonalny montaż i serwis.",
+  badge: "Montaż i serwis",
+  copyright: "EL-KLIM",
+  whatsappNumber: "48692243186",
+  location: "Cała Polska",
 }
 
 export default function RemonterPage() {
@@ -62,6 +63,7 @@ export default function RemonterPage() {
 
   return (
     <>
+      <ControlPanel />
       <Lightbox
         isOpen={lightboxOpen}
         onClose={() => setLightboxOpen(false)}
@@ -83,11 +85,9 @@ export default function RemonterPage() {
         <HeroSection
           content={heroContent}
           heroImages={[
-            "/images/remonter/real5.webp",
-            "/images/remonter/newHero2.webp",
-            "/images/remonter/newHero3.webp",
+            "/images/el-klim/1.jpg",
           ]}
-          heroImageAlt="Wykończenia wnętrz REMONTER"
+          heroImageAlt="EL-KLIM - fotowoltaika i instalacje elektryczne"
           phone={BRAND.phone}
         />
         <WhyUsSection

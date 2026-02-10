@@ -1,44 +1,44 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Manrope, Open_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin", "latin-ext"],
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
 
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin", "latin-ext"],
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://remonter.pl"),
-  title: "REMONTER | Wykończenia i remonty Kazimierza Wielka",
-  description: "Kompleksowe wykończenia mieszkań i domów pod klucz. Remonty, gładzie, malowanie, płytki, podłogi. Kazimierza Wielka i okolice. Kamil Makieła.",
+  metadataBase: new URL("https://el-klim.pl"),
+  title: "EL-KLIM | Fotowoltaika i instalacje elektryczne",
+  description: "Fotowoltaika, instalacje elektryczne, teletechniczne, systemy sygnalizacji pożaru i oddymiania. Profesjonalny montaż i serwis. Tel. 692 243 186",
   openGraph: {
-    title: "REMONTER | Wykończenia i remonty Kazimierza Wielka",
-    description: "Kompleksowe wykończenia mieszkań i domów pod klucz. Remonty, gładzie, malowanie, płytki, podłogi. Kazimierza Wielka i okolice.",
+    title: "EL-KLIM | Fotowoltaika i instalacje elektryczne",
+    description: "Fotowoltaika, instalacje elektryczne, teletechniczne, systemy sygnalizacji pożaru i oddymiania. Profesjonalny montaż i serwis.",
     type: "website",
     locale: "pl_PL",
     images: [
       {
-        url: "/images/remonter/real5.webp",
+        url: "/images/el-klim/1.jpg",
         width: 1200,
         height: 630,
-        alt: "REMONTER - wykończenia wnętrz Kazimierza Wielka",
+        alt: "EL-KLIM - fotowoltaika i instalacje elektryczne",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "REMONTER | Wykończenia i remonty Kazimierza Wielka",
-    description: "Kompleksowe wykończenia mieszkań i domów pod klucz. Kazimierza Wielka i okolice.",
-    images: ["/images/remonter/real5.webp"],
+    title: "EL-KLIM | Fotowoltaika i instalacje elektryczne",
+    description: "Fotowoltaika, instalacje elektryczne, teletechniczne, systemy sygnalizacji pożaru i oddymiania.",
+    images: ["/images/el-klim/1.jpg"],
   },
 };
 
@@ -49,7 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl" suppressHydrationWarning>
-      <body className={`${inter.variable} ${plusJakarta.variable} font-sans antialiased`}>
+      <body className={`${manrope.variable} ${openSans.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
