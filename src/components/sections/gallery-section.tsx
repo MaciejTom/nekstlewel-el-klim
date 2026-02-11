@@ -120,9 +120,10 @@ interface GallerySectionProps {
 
 export function GallerySection({ content = defaultPortfolioContent }: GallerySectionProps) {
   const portfolioContent = content
+  // Tylko index 1 ma row-span-2 (potrzebne zdjęcie portrait ~0.75:1)
   const projectsWithSpan = portfolioContent.projects.map((project, index) => ({
     ...project,
-    span: index === 1 || index === 4 ? "lg:row-span-2" : "",
+    span: index === 1 ? "lg:row-span-2" : "",
   }))
 
   return (
