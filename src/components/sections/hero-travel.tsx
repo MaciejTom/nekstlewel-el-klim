@@ -84,7 +84,7 @@ export function HeroTravel({
       </header>
 
       {/* Left side - Content */}
-      <div className="w-full md:w-[45%] min-h-screen flex flex-col justify-center px-6 md:px-12 pt-28 md:pt-36 pb-8 md:pb-12 relative z-10 bg-background">
+      <div className="w-full md:w-[45%] md:min-h-screen flex flex-col justify-center px-6 md:px-12 pt-8 md:pt-36 pb-12 md:pb-12 relative z-10 bg-background">
         {/* Main content */}
         <main className="flex flex-col justify-center space-y-6 max-w-xl">
           {badge && (
@@ -118,7 +118,7 @@ export function HeroTravel({
           </div>
 
           {stats && stats.length > 0 && (
-            <div className="flex items-center gap-8 pt-6 border-t border-border mt-4">
+            <div className="flex flex-wrap items-center gap-4 md:gap-8 pt-6 border-t border-border mt-4">
               <div className="flex items-center gap-4">
                 <div className="bg-primary/15 p-3 rounded-xl text-primary">
                   <Award className="w-7 h-7" />
@@ -159,7 +159,7 @@ export function HeroTravel({
       </div>
 
       {/* Right side - Image */}
-      <div className="w-full md:w-[55%] h-[50vh] md:h-screen relative order-first md:order-last">
+      <div className="w-full md:w-[55%] h-[40vh] md:h-screen relative order-first md:order-last">
         <div className="absolute inset-0">
           <Image
             src={image}
