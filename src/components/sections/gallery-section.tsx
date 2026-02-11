@@ -120,10 +120,10 @@ interface GallerySectionProps {
 
 export function GallerySection({ content = defaultPortfolioContent }: GallerySectionProps) {
   const portfolioContent = content
-  // Tylko index 1 ma row-span-2 (potrzebne zdjęcie portrait ~0.75:1)
-  const projectsWithSpan = portfolioContent.projects.map((project, index) => ({
+  // Wszystkie karty równej wysokości (brak zdjęć portrait)
+  const projectsWithSpan = portfolioContent.projects.map((project) => ({
     ...project,
-    span: index === 1 ? "lg:row-span-2" : "",
+    span: "",
   }))
 
   return (
@@ -149,7 +149,7 @@ export function GallerySection({ content = defaultPortfolioContent }: GallerySec
             <div className="flex justify-center gap-8 md:gap-16 mt-12">
               {portfolioContent.stats.map((stat, i) => (
                 <div key={i} className="text-center">
-                  <div className={`text-4xl md:text-5xl font-bold ${stat.highlight ? 'text-primary' : 'text-foreground'}`}>
+                  <div className="text-4xl md:text-5xl font-bold text-secondary">
                     {stat.value}
                   </div>
                   <div className="text-sm text-muted-foreground mt-2 uppercase tracking-wider">{stat.label}</div>
@@ -172,19 +172,21 @@ export function GallerySection({ content = defaultPortfolioContent }: GallerySec
                 src={project.image}
                 alt={project.title}
                 fill
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 style={{ objectPosition: (project as any).objectPosition || "center" }}
               />
-              <div className="absolute top-4 right-4 bg-secondary/80 backdrop-blur border border-primary/30 px-3 py-1 z-20">
-                <span className="text-primary text-[10px] font-bold uppercase tracking-widest">
+              <div className="absolute top-4 right-4 bg-secondary shadow-lg px-3 py-1.5 z-20">
+                <span className="text-primary text-[11px] font-bold uppercase tracking-widest">
                   {project.category}
                 </span>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                <h3 className="text-secondary-foreground font-bold text-xl">
+              <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                <h3 className="text-white font-bold text-xl drop-shadow-md">
                   {project.title}
                 </h3>
-                <p className="text-secondary-foreground/70 text-sm mt-1">{project.specs}</p>
+                <p className="text-white/80 text-sm mt-1 drop-shadow-sm">{project.specs}</p>
               </div>
             </div>
           ))}
@@ -193,13 +195,10 @@ export function GallerySection({ content = defaultPortfolioContent }: GallerySec
         <div className="text-center mt-16">
           <a
             href="#kontakt"
-            className="inline-flex items-center gap-3 text-primary hover:text-foreground transition-colors group"
-            aria-label="Napisz do nas jeśli chcesz podobny efekt - przejdź do formularza kontaktowego"
+            className="inline-flex items-center gap-2 text-primary font-semibold hover:text-secondary transition-colors group"
           >
-            <span className="text-lg font-medium">Chcesz podobny efekt?</span>
-            <span className="bg-primary text-primary-foreground px-6 py-3 font-bold tracking-widest uppercase text-sm group-hover:bg-foreground transition-colors" aria-hidden="true">
-              Napisz
-            </span>
+            <span>Chcesz podobny efekt? Napisz do nas</span>
+            <span className="group-hover:translate-x-1 transition-transform">→</span>
           </a>
         </div>
       </div>
