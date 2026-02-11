@@ -55,11 +55,16 @@ export function HeroTravel({
     <section className="min-h-screen flex flex-col md:flex-row">
       {/* Left side - Content (42%) */}
       <div className="w-full md:w-[42%] min-h-screen flex flex-col justify-between px-8 md:px-12 lg:px-16 py-8 md:py-12 relative z-10 bg-background">
-        {/* Logo */}
+        {/* Logo - Bebas Neue style like original */}
         <header>
-          <div className="flex items-center text-3xl font-bold tracking-tight">
-            <span className="text-primary">{brandName}</span>
-            <span className="text-secondary">{brandAccent}</span>
+          <div className="font-[family-name:var(--font-bebas)] leading-none">
+            <div className="text-5xl md:text-6xl tracking-wider">
+              <span className="text-primary">{brandName}</span>
+              <span className="text-secondary">{brandAccent}</span>
+            </div>
+            <div className="text-sm md:text-base tracking-[0.3em] text-secondary text-right -mt-1">
+              MONTAŻ SERWIS
+            </div>
           </div>
         </header>
 

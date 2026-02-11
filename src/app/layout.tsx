@@ -1,4 +1,11 @@
 import type { Metadata } from "next";
+import { Bebas_Neue } from "next/font/google";
+
+const bebasNeue = Bebas_Neue({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-bebas",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://el-klim.pl"),
@@ -33,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl" suppressHydrationWarning>
-      <body>
+      <body className={bebasNeue.variable}>
         {children}
       </body>
     </html>
