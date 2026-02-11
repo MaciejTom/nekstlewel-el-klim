@@ -87,53 +87,53 @@ export function ContactSection({ content = defaultContactContent }: ContactSecti
 
   return (
     <section id="kontakt" className="min-h-screen flex flex-col lg:flex-row overflow-hidden">
-      {/* Lewa strona - ciemna */}
-      <div className="w-full lg:w-1/2 bg-secondary p-8 lg:p-24 flex flex-col justify-center relative">
+      {/* Lewa strona - niebieska */}
+      <div className="w-full lg:w-1/2 bg-primary p-8 lg:p-24 flex flex-col justify-center relative">
         <div className="absolute top-0 left-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
 
         <Reveal className="relative z-10 max-w-xl mx-auto lg:mx-0">
-          <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">{contactContent.badge}</span>
-          <h2 className="text-4xl lg:text-6xl font-bold text-secondary-foreground mb-6 leading-tight">
+          <span className="text-white/80 font-bold tracking-widest uppercase text-sm mb-4 block">{contactContent.badge}</span>
+          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             {contactContent.title}
-            <div className="h-1.5 w-20 bg-primary mt-4 rounded-full" />
+            <div className="h-1.5 w-20 bg-white mt-4 rounded-full" />
           </h2>
-          <p className="text-secondary-foreground/70 text-lg mb-12 max-w-md leading-relaxed">
+          <p className="text-white/80 text-lg mb-12 max-w-md leading-relaxed">
             {contactContent.description}
           </p>
 
           <div className="space-y-6">
             {contactContent.phone && (
-              <a href={`tel:${contactContent.phone.replace(/\s/g, '')}`} className="flex items-center group p-4 rounded-xl hover:bg-secondary-foreground/5 transition-all duration-300">
-                <div className="w-12 h-12 rounded-full bg-secondary-foreground/10 flex items-center justify-center mr-6 group-hover:bg-primary transition-colors">
-                  <Phone className="w-5 h-5 text-secondary-foreground" />
+              <a href={`tel:${contactContent.phone.replace(/\s/g, '')}`} className="flex items-center group p-4 rounded-xl hover:bg-white/10 transition-all duration-300">
+                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mr-6 group-hover:bg-white/30 transition-colors">
+                  <Phone className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-secondary-foreground/50 text-sm uppercase tracking-wide font-medium">Telefon</p>
-                  <p className="text-secondary-foreground text-xl font-bold">{contactContent.phone}</p>
+                  <p className="text-white/60 text-sm uppercase tracking-wide font-medium">Telefon</p>
+                  <p className="text-white text-xl font-bold">{contactContent.phone}</p>
                 </div>
               </a>
             )}
 
             {contactContent.address && (
-              <div className="flex items-center group p-4 rounded-xl hover:bg-secondary-foreground/5 transition-all duration-300">
-                <div className="w-12 h-12 rounded-full bg-secondary-foreground/10 flex items-center justify-center mr-6 group-hover:bg-primary transition-colors">
-                  <MapPin className="w-5 h-5 text-secondary-foreground" />
+              <div className="flex items-center group p-4 rounded-xl hover:bg-white/10 transition-all duration-300">
+                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mr-6 group-hover:bg-white/30 transition-colors">
+                  <MapPin className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-secondary-foreground/50 text-sm uppercase tracking-wide font-medium">Lokalizacja</p>
-                  <p className="text-secondary-foreground text-xl font-bold leading-tight">{contactContent.address}</p>
+                  <p className="text-white/60 text-sm uppercase tracking-wide font-medium">Lokalizacja</p>
+                  <p className="text-white text-xl font-bold leading-tight">{contactContent.address}</p>
                 </div>
               </div>
             )}
 
             {contactContent.hours && (
-              <div className="flex items-center group p-4 rounded-xl hover:bg-secondary-foreground/5 transition-all duration-300">
-                <div className="w-12 h-12 rounded-full bg-secondary-foreground/10 flex items-center justify-center mr-6 group-hover:bg-primary transition-colors">
-                  <Clock className="w-5 h-5 text-secondary-foreground" />
+              <div className="flex items-center group p-4 rounded-xl hover:bg-white/10 transition-all duration-300">
+                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mr-6 group-hover:bg-white/30 transition-colors">
+                  <Clock className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-secondary-foreground/50 text-sm uppercase tracking-wide font-medium">Godziny pracy</p>
-                  <p className="text-secondary-foreground text-xl font-bold">{contactContent.hours}</p>
+                  <p className="text-white/60 text-sm uppercase tracking-wide font-medium">Godziny pracy</p>
+                  <p className="text-white text-xl font-bold">{contactContent.hours}</p>
                 </div>
               </div>
             )}

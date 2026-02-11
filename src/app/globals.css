@@ -9,14 +9,14 @@
   --heading-font: 'Poppins', ui-sans-serif, system-ui, sans-serif;
 
   --background: #ffffff;
-  --foreground: #1a4f8b;
+  --foreground: #1a1a1a;
   --card: #ffffff;
-  --card-foreground: #1a4f8b;
+  --card-foreground: #1a1a1a;
   --popover: #ffffff;
-  --popover-foreground: #1a4f8b;
+  --popover-foreground: #1a1a1a;
   --primary: #267cd3;
   --primary-foreground: #ffffff;
-  --secondary: #1A4F8B;
+  --secondary: #1a1a1a;
   --secondary-foreground: #ffffff;
   --muted: #f3f4f6;
   --muted-foreground: #6B7280;
@@ -115,21 +115,13 @@ html {
   }
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  color: var(--secondary);
-  letter-spacing: var(--tracking-tight);
-}
-
-.bg-secondary h1,
-.bg-secondary h2,
-.bg-secondary h3,
-.bg-secondary h4,
-.bg-secondary p,
-.bg-secondary span,
-.bg-secondary .text-secondary-foreground {
-  color: #ffffff;
+/* Typography - używamy @layer base żeby Tailwind utilities (text-white) mogły nadpisać */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--secondary);
+    letter-spacing: var(--tracking-tight);
+  }
 }
 
 .text-accent-primary {

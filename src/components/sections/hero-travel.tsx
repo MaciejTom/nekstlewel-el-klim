@@ -69,19 +69,19 @@ export function HeroTravel({
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center flex-wrap justify-end gap-x-6 gap-y-2 max-w-[60%] xl:max-w-none">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-white font-medium hover:text-primary transition-colors drop-shadow-md"
+              className="text-white font-medium hover:text-primary transition-colors drop-shadow-md whitespace-nowrap"
             >
               {link.label}
             </a>
           ))}
           <a
             href={navCta.href}
-            className="border border-white text-white px-5 py-2 rounded-full hover:bg-primary hover:border-primary hover:text-white transition-all duration-200 font-medium drop-shadow-md"
+            className="border border-white text-white px-5 py-2 rounded-full hover:bg-primary hover:border-primary hover:text-white transition-all duration-200 font-medium drop-shadow-md whitespace-nowrap"
           >
             {navCta.text}
           </a>
