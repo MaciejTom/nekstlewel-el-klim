@@ -2,7 +2,7 @@ export const portfolioContent = {
   tagline: "Realizacje",
   title: "Nasze",
   titleAccent: "realizacje",
-  subtitle: "Zobacz co już zrobiliśmy. Od małych domów po duże farmy naziemne.",
+  subtitle: "Zobacz co już zrobiliśmy. Fotowoltaika, elektryka, SAP, instalacje odgromowe.",
   stats: [
     { value: "50+", label: "Instalacji", highlight: false },
     { value: "100%", label: "Zadowolonych", highlight: true },
@@ -50,6 +50,24 @@ export const portfolioContent = {
       category: "Budynek komercyjny",
       specs: "Konstrukcja wsporcza na dachu płaskim",
       image: "/images/el-klim/hala-dach.png",
+    },
+    {
+      title: "Rozdzielnica elektryczna",
+      category: "Elektryka",
+      specs: "Profesjonalny montaż rozdzielnicy",
+      image: "/images/el-klim/elektryka-rozdzielnica.jpg",
+    },
+    {
+      title: "System sygnalizacji pożaru",
+      category: "SAP",
+      specs: "Montaż czujek dymu i centrali",
+      image: "/images/el-klim/sap-czujka.jpg",
+    },
+    {
+      title: "Instalacja odgromowa",
+      category: "Odgromowe",
+      specs: "Zwody i przewody na dachu",
+      image: "/images/el-klim/odgromowe-dach.jpg",
     },
   ],
   galleryButton: {

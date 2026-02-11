@@ -32,8 +32,8 @@ export const servicesEditorialContent: ServiceEditorialContent = {
         "Naprawy i awarie",
         "Przeglądy i pomiary",
       ],
-      image: "/images/el-klim/rozdzielnica.png",
-      imageAlt: "Rozdzielnica elektryczna",
+      image: "/images/el-klim/elektryka-rozdzielnica.jpg",
+      imageAlt: "Profesjonalna rozdzielnica elektryczna",
     },
     {
       icon: "stairs",
@@ -46,8 +46,8 @@ export const servicesEditorialContent: ServiceEditorialContent = {
         "Instalacje odgromowe",
         "Teletechnika",
       ],
-      image: "/images/el-klim/inwerter.png",
-      imageAlt: "Inwerter Huawei",
+      image: "/images/el-klim/sap-czujka.jpg",
+      imageAlt: "Czujka dymu - system sygnalizacji pożaru",
     },
   ],
 
