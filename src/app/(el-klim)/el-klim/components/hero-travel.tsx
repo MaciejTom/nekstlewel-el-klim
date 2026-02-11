@@ -86,34 +86,35 @@ export function HeroTravel({
             {ctaSecondary && (
               <a
                 href={ctaSecondary.href}
-                className="inline-block border border-secondary text-secondary font-semibold py-3 px-8 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-all duration-200"
+                className="inline-flex items-center gap-2 text-secondary font-semibold hover:text-primary transition-colors group"
               >
                 {ctaSecondary.text}
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
               </a>
             )}
           </div>
 
           {stats && stats.length > 0 && (
-            <div className="flex items-center gap-6 pt-6 border-t border-border mt-4">
-              <div className="flex items-center gap-3">
-                <div className="bg-primary/20 p-2 rounded-full text-secondary">
-                  <Award className="w-5 h-5" />
+            <div className="flex items-center gap-8 pt-6 border-t border-border mt-4">
+              <div className="flex items-center gap-4">
+                <div className="bg-primary/15 p-3 rounded-xl text-primary">
+                  <Award className="w-7 h-7" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-black text-xl leading-none text-secondary">{stats[0].value}</span>
-                  <span className="text-xs font-medium text-muted-foreground uppercase">{stats[0].label}</span>
+                  <span className="font-black text-2xl leading-none text-secondary">{stats[0].value}</span>
+                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{stats[0].label}</span>
                 </div>
               </div>
               {stats[1] && (
                 <>
-                  <div className="w-px h-10 bg-border"></div>
-                  <div className="flex items-center gap-3">
-                    <div className="bg-primary/20 p-2 rounded-full text-secondary">
-                      <Zap className="w-5 h-5" />
+                  <div className="w-px h-12 bg-border"></div>
+                  <div className="flex items-center gap-4">
+                    <div className="bg-primary/15 p-3 rounded-xl text-primary">
+                      <Zap className="w-7 h-7" />
                     </div>
                     <div className="flex flex-col">
-                      <span className="font-black text-xl leading-none text-secondary">{stats[1].value}</span>
-                      <span className="text-xs font-medium text-muted-foreground uppercase">{stats[1].label}</span>
+                      <span className="font-black text-2xl leading-none text-secondary">{stats[1].value}</span>
+                      <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{stats[1].label}</span>
                     </div>
                   </div>
                 </>
@@ -135,8 +136,9 @@ export function HeroTravel({
       </div>
 
       {/* Right side - Image with Nav overlay */}
-      <div className="w-full md:w-1/2 min-h-[50vh] md:min-h-screen relative">
-        {/* Navigation overlay */}
+      <div className="w-full md:w-1/2 h-[50vh] md:h-screen relative">
+        {/* Navigation overlay with gradient for better contrast */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/40 to-transparent z-10 pointer-events-none" />
         <nav className="absolute top-0 right-0 w-full p-8 md:p-12 flex justify-end items-center space-x-8 z-20">
           {navLinks.map((link) => (
             <a

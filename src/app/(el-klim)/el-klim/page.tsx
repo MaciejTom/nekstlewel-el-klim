@@ -70,7 +70,7 @@ export default function ElKlimPage() {
         <HeroTravel
           brandName="EL"
           brandAccent="KLIM"
-          badge="Fotowoltaika | Elektryka | SAP | Odgromowe"
+          badge="Fotowoltaika & Elektryka"
           headline="Mała firma, duże realizacje. Od domu po farmę PV."
           headlineAccent="Od domu po farmę PV."
           description="Dzwonisz do właściciela, nie do call center. Ja wyceniam, ekipa montuje, ja odpowiadam. Gorlice i okolice."
