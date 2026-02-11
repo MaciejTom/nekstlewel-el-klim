@@ -1,8 +1,8 @@
 import type { ServiceEditorialContent } from "@/types"
 
 export const servicesEditorialContent: ServiceEditorialContent = {
-  title: "Co",
-  titleBreak: "robimy",
+  title: "Co robimy",
+  titleBreak: "",
   subtitle: "Specjalizujemy się w fotowoltaice, ale zrobimy też elektrykę, SAP czy instalację odgromową. Zadzwoń - powiem czy się za to weźmiemy.",
 
   services: [

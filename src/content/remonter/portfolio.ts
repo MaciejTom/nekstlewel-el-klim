@@ -17,12 +17,12 @@ export const portfolioContent = {
       image: "/images/el-klim/farma-naziemna.png",
       featured: true,
     },
-    // Index 1 - ROW-SPAN-2 (portrait!) - jedyne zdjęcie pionowe
+    // Index 1 - landscape
     {
-      title: "Instalacja naziemna przy domu",
-      category: "Dom jednorodzinny",
-      specs: "Panele w ogrodzie, optymalny kąt",
-      image: "/images/el-klim/dom-naziemna.png",
+      title: "System sygnalizacji pożaru",
+      category: "SAP",
+      specs: "Montaż czujek dymu i centrali",
+      image: "/images/el-klim/sap-czujka.jpg",
     },
     // Index 2 - landscape
     {
@@ -30,6 +30,13 @@ export const portfolioContent = {
       category: "Dom jednorodzinny",
       specs: "Dach skośny, widok z drona",
       image: "/images/el-klim/dom-dach.png",
+    },
+    // Index 3 - landscape
+    {
+      title: "Instalacja odgromowa",
+      category: "Odgromowe",
+      specs: "Zwody i przewody na dachu",
+      image: "/images/el-klim/odgromowe-dach.jpg",
     },
     // Index 3 - landscape (panorama - objectPosition: center)
     {
@@ -67,20 +74,6 @@ export const portfolioContent = {
       category: "Elektryka",
       specs: "Profesjonalny montaż rozdzielnicy",
       image: "/images/el-klim/elektryka-rozdzielnica.jpg",
-    },
-    // Index 8 - landscape
-    {
-      title: "System sygnalizacji pożaru",
-      category: "SAP",
-      specs: "Montaż czujek dymu i centrali",
-      image: "/images/el-klim/sap-czujka.jpg",
-    },
-    // Index 9 - landscape
-    {
-      title: "Instalacja odgromowa",
-      category: "Odgromowe",
-      specs: "Zwody i przewody na dachu",
-      image: "/images/el-klim/odgromowe-dach.jpg",
     },
   ],
   galleryButton: {

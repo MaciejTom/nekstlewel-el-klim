@@ -17,6 +17,9 @@ export function ProcessSection({ content = defaultProcessContent }: ProcessSecti
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
+          <span className="text-sm font-bold text-primary tracking-widest uppercase mb-4 block">
+            Proces
+          </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 h2-accent-center tracking-tight">
             {processContent.title}
           </h2>

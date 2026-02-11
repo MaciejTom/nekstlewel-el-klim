@@ -10,8 +10,15 @@ interface FaqSectionProps {
 export function FaqSection({ content = defaultFaqContent }: FaqSectionProps) {
   const faqContent = content
   return (
-    <section id="faq" className="bg-background py-32">
-      <div className="container mx-auto px-6">
+    <section
+      id="faq"
+      className="relative py-32 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/images/el-klim/background.jpg')" }}
+    >
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-background/90" />
+
+      <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <span className="text-sm font-bold text-primary tracking-widest uppercase mb-4 block">

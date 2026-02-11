@@ -138,7 +138,7 @@ export function GallerySection({ content = defaultPortfolioContent }: GallerySec
             {portfolioContent.tagline}
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 tracking-tight h2-accent-center">
-            {portfolioContent.title} <span className="text-primary">{portfolioContent.titleAccent}</span>
+            {portfolioContent.title} {portfolioContent.titleAccent}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             {portfolioContent.subtitle}
@@ -177,16 +177,16 @@ export function GallerySection({ content = defaultPortfolioContent }: GallerySec
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 style={{ objectPosition: (project as any).objectPosition || "center" }}
               />
-              <div className="absolute top-4 right-4 bg-secondary shadow-lg px-3 py-1.5 z-20">
-                <span className="text-primary text-[11px] font-bold uppercase tracking-widest">
+              <div className="absolute top-4 right-4 bg-white/95 shadow-lg px-3 py-1.5 z-20">
+                <span className="text-secondary text-[11px] font-bold uppercase tracking-widest">
                   {project.category}
                 </span>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                <h3 className="text-white font-bold text-xl drop-shadow-md">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                <h3 className="text-white font-bold text-xl" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
                   {project.title}
                 </h3>
-                <p className="text-white/80 text-sm mt-1 drop-shadow-sm">{project.specs}</p>
+                <p className="text-white/90 text-sm mt-1" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>{project.specs}</p>
               </div>
             </div>
           ))}
