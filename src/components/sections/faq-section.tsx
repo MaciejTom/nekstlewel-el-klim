@@ -2,6 +2,7 @@
 
 import { ChevronDown } from "lucide-react"
 import { faqContent as defaultFaqContent } from "@/content/remonter/faq"
+import { Reveal } from "@/hooks/use-reveal"
 
 interface FaqSectionProps {
   content?: typeof defaultFaqContent
@@ -20,7 +21,7 @@ export function FaqSection({ content = defaultFaqContent }: FaqSectionProps) {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <Reveal className="text-center mb-16">
           <span className="text-sm font-bold text-primary tracking-widest uppercase mb-4 block">
             FAQ
           </span>
@@ -32,29 +33,30 @@ export function FaqSection({ content = defaultFaqContent }: FaqSectionProps) {
               {faqContent.subtitle}
             </p>
           )}
-        </div>
+        </Reveal>
 
         {/* FAQ items */}
-        <div className="max-w-3xl mx-auto space-y-6">
+        <div className="max-w-3xl mx-auto space-y-6 reveal-stagger">
           {faqContent.items.map((item, index) => (
-            <details
-              key={index}
-              className="group bg-card border border-border/50 rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-all"
-            >
-              <summary className="flex items-center justify-between p-8 cursor-pointer hover:bg-muted/30 transition-colors select-none">
-                <span className="font-bold text-lg text-foreground pr-8">
-                  {item.question}
-                </span>
-                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-open:bg-primary group-open:text-primary-foreground transition-colors">
-                  <ChevronDown className="w-5 h-5 transition-transform duration-300 group-open:rotate-180" />
+            <Reveal key={index}>
+              <details
+                className="group bg-card border border-border/50 rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-all"
+              >
+                <summary className="flex items-center justify-between p-8 cursor-pointer hover:bg-muted/30 transition-colors select-none">
+                  <span className="font-bold text-lg text-foreground pr-8">
+                    {item.question}
+                  </span>
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-open:bg-primary group-open:text-primary-foreground transition-colors">
+                    <ChevronDown className="w-5 h-5 transition-transform duration-300 group-open:rotate-180" />
+                  </div>
+                </summary>
+                <div className="px-8 pb-8 pt-0 text-muted-foreground leading-relaxed animate-fade-in">
+                  <div className="pt-4 border-t border-border/50">
+                     {item.answer}
+                  </div>
                 </div>
-              </summary>
-              <div className="px-8 pb-8 pt-0 text-muted-foreground leading-relaxed animate-fade-in">
-                <div className="pt-4 border-t border-border/50">
-                   {item.answer}
-                </div>
-              </div>
-            </details>
+              </details>
+            </Reveal>
           ))}
         </div>
       </div>

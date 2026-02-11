@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Phone, Clock, MapPin, ShieldCheck } from "lucide-react"
 import { navLinks as defaultNavLinks } from "./nav-section"
 
@@ -35,8 +36,14 @@ export function FooterSection({
           {/* Brand Column */}
           <div>
             <div className="flex justify-center sm:justify-start">
-              <a href="/" className="text-3xl font-bold text-foreground tracking-tight">
-                {brandName}
+              <a href="/" className="block">
+                <Image
+                  src="/images/el-klim/image-Photoroom.png"
+                  alt={brandName}
+                  width={200}
+                  height={65}
+                  className="h-14 md:h-16 w-auto"
+                />
               </a>
             </div>
 
@@ -44,9 +51,11 @@ export function FooterSection({
               {brandDescription}
             </p>
 
-            <div className="mt-6 inline-flex items-center gap-2 bg-gold/10 text-gold border border-gold/20 px-4 py-2 rounded-sm text-sm font-semibold">
-              <ShieldCheck className="w-4 h-4" />
-              {badge}
+            <div className="mt-6 flex justify-center sm:justify-start">
+              <div className="inline-flex items-center gap-2 bg-gold/10 text-gold border border-gold/20 px-4 py-2 rounded-sm text-sm font-semibold">
+                <ShieldCheck className="w-4 h-4" />
+                {badge}
+              </div>
             </div>
           </div>
 

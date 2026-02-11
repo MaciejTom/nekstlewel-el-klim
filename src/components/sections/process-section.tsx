@@ -2,6 +2,7 @@
 
 import { ChevronRight } from "lucide-react"
 import { processContent as defaultProcessContent } from "@/content/remonter/process"
+import { Reveal } from "@/hooks/use-reveal"
 
 interface ProcessSectionProps {
   content?: typeof defaultProcessContent
@@ -16,7 +17,7 @@ export function ProcessSection({ content = defaultProcessContent }: ProcessSecti
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <Reveal className="text-center mb-16">
           <span className="text-sm font-bold text-primary tracking-widest uppercase mb-4 block">
             Proces
           </span>
@@ -28,12 +29,12 @@ export function ProcessSection({ content = defaultProcessContent }: ProcessSecti
               {processContent.subtitle}
             </p>
           )}
-        </div>
+        </Reveal>
 
         {/* Steps - horizontal grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto reveal-stagger">
           {processContent.steps.map((step, index) => (
-            <div
+            <Reveal
               key={index}
               className="group relative"
             >
@@ -67,7 +68,7 @@ export function ProcessSection({ content = defaultProcessContent }: ProcessSecti
                   </p>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

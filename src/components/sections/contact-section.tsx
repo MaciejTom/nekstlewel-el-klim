@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Phone, MapPin, Clock, ArrowRight, CheckCircle, AlertCircle } from "lucide-react"
 import { contactContent as defaultContactContent } from "@/content/remonter/contact"
+import { Reveal } from "@/hooks/use-reveal"
 
 interface ContactSectionProps {
   content?: typeof defaultContactContent
@@ -90,7 +91,7 @@ export function ContactSection({ content = defaultContactContent }: ContactSecti
       <div className="w-full lg:w-1/2 bg-secondary p-8 lg:p-24 flex flex-col justify-center relative">
         <div className="absolute top-0 left-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
 
-        <div className="relative z-10 max-w-xl mx-auto lg:mx-0">
+        <Reveal className="relative z-10 max-w-xl mx-auto lg:mx-0">
           <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">{contactContent.badge}</span>
           <h2 className="text-4xl lg:text-6xl font-bold text-secondary-foreground mb-6 leading-tight">
             {contactContent.title}
@@ -137,12 +138,12 @@ export function ContactSection({ content = defaultContactContent }: ContactSecti
               </div>
             )}
           </div>
-        </div>
+        </Reveal>
       </div>
 
       {/* Prawa strona - jasna */}
       <div className="w-full lg:w-1/2 bg-card p-8 lg:p-24 flex flex-col justify-center">
-        <div className="max-w-xl mx-auto lg:ml-0 w-full">
+        <Reveal className="max-w-xl mx-auto lg:ml-0 w-full">
           <h3 className="text-3xl font-bold text-foreground mb-8">{contactContent.formTitle}</h3>
 
           {isSuccess ? (
@@ -259,7 +260,7 @@ export function ContactSection({ content = defaultContactContent }: ContactSecti
               </p>
             </form>
           )}
-        </div>
+        </Reveal>
       </div>
     </section>
   )

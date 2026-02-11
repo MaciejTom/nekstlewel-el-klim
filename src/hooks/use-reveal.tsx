@@ -51,11 +51,13 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>({
 interface RevealProps extends UseRevealOptions {
   children: React.ReactNode
   className?: string
+  style?: React.CSSProperties
 }
 
 export function Reveal({
   children,
   className = "",
+  style,
   threshold,
   rootMargin,
   triggerOnce,
@@ -66,6 +68,7 @@ export function Reveal({
     <div
       ref={ref}
       className={`reveal ${isVisible ? "visible" : ""} ${className}`}
+      style={style}
     >
       {children}
     </div>

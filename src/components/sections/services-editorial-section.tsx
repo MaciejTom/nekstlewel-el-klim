@@ -1,6 +1,9 @@
+"use client"
+
 import Image from "next/image"
 import type { ServiceEditorialContent } from "@/types"
 import { Home, Hammer, Paintbrush, Bath, Layers, Check, Phone } from "lucide-react"
+import { Reveal } from "@/hooks/use-reveal"
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   home: Home,
@@ -28,8 +31,8 @@ const s = {
   list: "w-full flex flex-col gap-24 lg:gap-32",
 
   // Service row
-  row: "group flex flex-col lg:flex-row items-center gap-12 lg:gap-20 animate-fade-up",
-  rowReverse: "group flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20 animate-fade-up",
+  row: "group flex flex-col lg:flex-row items-center gap-12 lg:gap-20",
+  rowReverse: "group flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20",
 
   // Image
   imageCol: "w-full lg:w-1/2 relative perspective-1000",
@@ -62,7 +65,7 @@ const s = {
   featureText: "font-medium text-foreground/90",
 
   // CTA
-  cta: "mt-24 lg:mt-32 w-full max-w-7xl bg-secondary text-secondary-foreground rounded-sm p-8 md:p-12 animate-fade-up relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8",
+  cta: "mt-24 lg:mt-32 w-full max-w-7xl bg-secondary text-secondary-foreground rounded-sm p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8",
   ctaTitle: "text-2xl md:text-3xl text-secondary-foreground font-bold mb-2 md:mb-0 tracking-tight relative z-10",
   ctaDesc: "text-secondary-foreground/70 relative z-10",
   ctaButton: "bg-accent hover:bg-accent/90 text-accent-foreground font-bold py-4 px-10 shadow-lg shadow-accent/25 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-3 text-lg rounded-sm relative z-10 shrink-0",
@@ -84,7 +87,7 @@ export function ServicesEditorialSection({ content, className, id }: ServicesEdi
 
       <div className={s.container}>
         {/* Header */}
-        <div className={s.header}>
+        <Reveal className={s.header}>
           <span className="text-sm font-bold text-primary tracking-widest uppercase mb-4 block">
             Usługi
           </span>
@@ -94,7 +97,7 @@ export function ServicesEditorialSection({ content, className, id }: ServicesEdi
             <span className={s.titleUnderline} />
           </h2>
           <p className={s.subtitle}>{subtitle}</p>
-        </div>
+        </Reveal>
 
         {/* Services */}
         <div className={s.list}>
@@ -102,7 +105,7 @@ export function ServicesEditorialSection({ content, className, id }: ServicesEdi
             const isEven = index % 2 === 1
 
             return (
-              <div key={index} className={isEven ? s.rowReverse : s.row}>
+              <Reveal key={index} className={isEven ? s.rowReverse : s.row}>
                 {/* Image */}
                 <div className={s.imageCol}>
                   <div className={isEven ? s.imageBorderRight : s.imageBorderLeft} />
@@ -147,14 +150,14 @@ export function ServicesEditorialSection({ content, className, id }: ServicesEdi
                     ))}
                   </ul>
                 </div>
-              </div>
+              </Reveal>
             )
           })}
         </div>
 
         {/* CTA */}
         {cta && (
-          <div className={s.cta}>
+          <Reveal className={s.cta}>
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-foreground/5 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
@@ -170,7 +173,7 @@ export function ServicesEditorialSection({ content, className, id }: ServicesEdi
               })()}
               {cta.buttonText}
             </a>
-          </div>
+          </Reveal>
         )}
       </div>
     </section>

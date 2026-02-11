@@ -94,7 +94,7 @@ export default function HomePage() {
             { label: "Opinie", href: "#opinie" },
             { label: "FAQ", href: "#faq" },
           ]}
-          navCta={{ text: "Kontakt", href: "#kontakt" }}
+          navCta={{ text: "692 243 186", href: "tel:692243186" }}
           image="/images/el-klim/hero3.jpg"
           imageAlt="EL-KLIM - instalacja fotowoltaiczna"
         />

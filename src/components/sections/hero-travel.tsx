@@ -1,7 +1,8 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
-import { ChevronDown, Award, Zap, Sun } from "lucide-react"
+import { ChevronDown, Award, Zap, Sun, Menu, X } from "lucide-react"
 
 interface HeroTravelProps {
   brandName?: string
@@ -37,6 +38,8 @@ export function HeroTravel({
   image,
   imageAlt = "Hero image",
 }: HeroTravelProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   const renderHeadline = () => {
     if (!headlineAccent) return headline
 
@@ -54,34 +57,71 @@ export function HeroTravel({
     <section className="min-h-screen flex flex-col md:flex-row relative">
       {/* Unified Header - Logo + Nav */}
       <header className="fixed md:absolute top-0 left-0 right-0 z-50 px-6 md:px-12 py-3 md:py-5 flex justify-between items-center bg-background/95 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none border-b border-border/50 md:border-none">
-          <a href="/" className="block">
-            <Image
-              src="/images/el-klim/image-Photoroom.png"
-              alt="EL-KLIM - Montaż Serwis"
-              width={280}
-              height={90}
-              className="h-16 md:h-20 lg:h-24 w-auto"
-              priority
-            />
+        <a href="/" className="block">
+          <Image
+            src="/images/el-klim/image-Photoroom.png"
+            alt="EL-KLIM - Montaż Serwis"
+            width={280}
+            height={90}
+            className="h-16 md:h-20 lg:h-24 w-auto"
+            priority
+          />
+        </a>
+
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center space-x-8">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-white font-medium hover:text-primary transition-colors drop-shadow-md"
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href={navCta.href}
+            className="border border-white text-white px-5 py-2 rounded-full hover:bg-primary hover:border-primary hover:text-white transition-all duration-200 font-medium drop-shadow-md"
+          >
+            {navCta.text}
           </a>
-          <nav className="flex items-center space-x-6 md:space-x-8">
+        </nav>
+
+        {/* Mobile hamburger */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden p-2 text-secondary hover:text-primary transition-colors"
+          aria-label={isMenuOpen ? "Zamknij menu" : "Otwórz menu"}
+        >
+          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </header>
+
+      {/* Mobile menu overlay */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-40 md:hidden">
+          <div className="absolute inset-0 bg-background/98 backdrop-blur-sm" />
+          <nav className="relative z-10 flex flex-col items-center justify-center h-full space-y-8 pt-20">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-secondary md:text-white font-medium hover:text-primary transition-colors hidden sm:block md:drop-shadow-md"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-2xl font-semibold text-secondary hover:text-primary transition-colors"
               >
                 {link.label}
               </a>
             ))}
             <a
               href={navCta.href}
-              className="border border-secondary md:border-white text-secondary md:text-white px-5 py-2 rounded-full hover:bg-primary hover:border-primary hover:text-white transition-all duration-200 font-medium md:drop-shadow-md"
+              onClick={() => setIsMenuOpen(false)}
+              className="bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-primary/90 transition-colors"
             >
               {navCta.text}
             </a>
           </nav>
-      </header>
+        </div>
+      )}
 
       {/* Left side - Content */}
       <div className="w-full md:w-[45%] md:min-h-screen flex flex-col justify-center px-6 md:px-12 pt-8 md:pt-36 pb-12 md:pb-12 relative z-10 bg-background">
@@ -99,7 +139,7 @@ export function HeroTravel({
           <p className="text-muted-foreground text-base leading-relaxed">
             {description}
           </p>
-          <div className="pt-4 flex flex-wrap gap-4">
+          <div className="pt-4 flex flex-wrap gap-4 justify-center md:justify-start">
             <a
               href={ctaPrimary.href}
               className="inline-block bg-primary text-primary-foreground font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5"

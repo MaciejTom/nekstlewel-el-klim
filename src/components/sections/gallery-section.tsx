@@ -160,9 +160,10 @@ export function GallerySection({ content = defaultPortfolioContent }: GallerySec
           )}
         </Reveal>
 
-        <div
+        <Reveal
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
           style={{ gridAutoRows: "280px" }}
+          rootMargin="0px 0px -100px 0px"
         >
           {projectsWithSpan.map((project, index) => (
             <div
@@ -191,9 +192,9 @@ export function GallerySection({ content = defaultPortfolioContent }: GallerySec
               </div>
             </div>
           ))}
-        </div>
+        </Reveal>
 
-        <div className="text-center mt-16">
+        <Reveal className="text-center mt-16">
           <a
             href="#kontakt"
             className="inline-flex items-center gap-2 text-primary font-semibold hover:text-secondary transition-colors group"
@@ -201,7 +202,7 @@ export function GallerySection({ content = defaultPortfolioContent }: GallerySec
             <span>Chcesz podobny efekt? Napisz do nas</span>
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </a>
-        </div>
+        </Reveal>
       </div>
     </section>
   )
