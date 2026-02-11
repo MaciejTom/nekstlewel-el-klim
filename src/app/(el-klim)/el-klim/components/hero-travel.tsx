@@ -53,8 +53,8 @@ export function HeroTravel({
 
   return (
     <section className="min-h-screen flex flex-col md:flex-row">
-      {/* Left side - Content */}
-      <div className="w-full md:w-1/2 min-h-screen flex flex-col justify-between px-8 md:px-16 lg:px-24 py-8 md:py-12 relative z-10 bg-background">
+      {/* Left side - Content (42%) */}
+      <div className="w-full md:w-[42%] min-h-screen flex flex-col justify-between px-8 md:px-12 lg:px-16 py-8 md:py-12 relative z-10 bg-background">
         {/* Logo */}
         <header>
           <div className="flex items-center text-3xl font-bold tracking-tight">
@@ -64,7 +64,7 @@ export function HeroTravel({
         </header>
 
         {/* Main content */}
-        <main className="flex flex-col justify-center space-y-6 max-w-lg mt-12 md:mt-0">
+        <main className="flex flex-col justify-center space-y-6 max-w-xl mt-12 md:mt-0">
           {badge && (
             <span className="inline-block text-sm font-medium text-primary tracking-wide">
               {badge}
@@ -135,8 +135,8 @@ export function HeroTravel({
         </footer>
       </div>
 
-      {/* Right side - Image with Nav overlay */}
-      <div className="w-full md:w-1/2 h-[50vh] md:h-screen relative">
+      {/* Right side - Image with Nav overlay (58%) */}
+      <div className="w-full md:w-[58%] h-[50vh] md:h-screen relative">
         {/* Navigation overlay with gradient for better contrast */}
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/40 to-transparent z-10 pointer-events-none" />
         <nav className="absolute top-0 right-0 w-full p-8 md:p-12 flex justify-end items-center space-x-8 z-20">
