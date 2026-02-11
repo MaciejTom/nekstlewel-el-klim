@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { portfolioContent as defaultPortfolioContent } from "@/content/remonter/portfolio"
+import { Reveal } from "@/hooks/use-reveal"
 
 interface GallerySliderProps {
   projects: typeof defaultPortfolioContent.projects
@@ -133,7 +134,7 @@ export function GallerySection({ content = defaultPortfolioContent }: GallerySec
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-secondary/5 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
       <div className="mx-auto max-w-[1400px] relative z-10">
-        <div className="text-center mb-20">
+        <Reveal className="text-center mb-20">
           <span className="text-sm font-bold text-primary tracking-widest uppercase mb-4 block">
             {portfolioContent.tagline}
           </span>
@@ -157,7 +158,7 @@ export function GallerySection({ content = defaultPortfolioContent }: GallerySec
               ))}
             </div>
           )}
-        </div>
+        </Reveal>
 
         <div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
