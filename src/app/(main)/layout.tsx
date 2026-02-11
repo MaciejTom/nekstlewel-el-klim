@@ -1,18 +1,11 @@
-import { Manrope, Open_Sans } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "../globals.css";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin", "latin-ext"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
-
-const openSans = Open_Sans({
-  variable: "--font-open-sans",
-  subsets: ["latin", "latin-ext"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "600", "700"],
 });
 
 export default function MainLayout({
@@ -21,7 +14,7 @@ export default function MainLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className={`${manrope.variable} ${openSans.variable} font-sans antialiased`}>
+    <div className={`${poppins.variable} font-sans antialiased`} style={{ fontFamily: 'var(--font-poppins)' }}>
       {children}
     </div>
   );

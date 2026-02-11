@@ -1,51 +1,49 @@
 @import "tailwindcss";
 
 /* =============================================
-   INDUSTRIAL YELLOW THEME
-   Dark + Yellow accent - dla fotowoltaiki, energii
+   EL-KLIM THEME - Travel Luxury Style
+   Turquoise + Navy, Poppins font
    ============================================= */
 
 :root {
-  /* Fonty - Manrope + Open Sans */
-  --body-font: 'Open Sans', ui-sans-serif, system-ui, sans-serif;
-  --heading-font: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  /* Fonty - Poppins */
+  --body-font: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --heading-font: 'Poppins', ui-sans-serif, system-ui, sans-serif;
 
-  --background: #171717;
-  --foreground: #fafafa;
-  --card: #171717;
-  --card-foreground: #fafafa;
-  --popover: #171717;
-  --popover-foreground: #fafafa;
-  --primary: #eab308;
-  --primary-foreground: #171717;
-  --secondary: #262626;
-  --secondary-foreground: #fafafa;
-  --muted: #262626;
-  --muted-foreground: #a3a3a3;
-  --accent: #262626;
-  --accent-foreground: #fafafa;
+  /* EL-KLIM Color Palette */
+  --background: #ffffff;
+  --foreground: #1a4f8b;
+  --card: #ffffff;
+  --card-foreground: #1a4f8b;
+  --popover: #ffffff;
+  --popover-foreground: #1a4f8b;
+  --primary: #267cd3;              /* Blue */
+  --primary-foreground: #ffffff;
+  --secondary: #1A4F8B;            /* Navy blue */
+  --secondary-foreground: #ffffff;
+  --muted: #f3f4f6;
+  --muted-foreground: #6B7280;     /* Text grey */
+  --accent: #3BC9DB;
+  --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #404040;
-  --input: #404040;
-  --ring: #eab308;
-  --gold: #eab308;                /* yellow-500 - brand accent */
-  --chart-1: #e63946;
-  --chart-2: #1d3557;
-  --chart-3: #457b9d;
-  --chart-4: #a8dadc;
-  --chart-5: #f1faee;
-  --radius: 0.5rem;
-  --shadow-2xs: 0px 4px 12px 0px hsl(25 15% 15% / 0.04);
-  --shadow-xs: 0px 4px 12px 0px hsl(25 15% 15% / 0.04);
-  --shadow-sm: 0px 4px 12px 0px hsl(25 15% 15% / 0.08), 0px 1px 2px -1px hsl(25 15% 15% / 0.08);
-  --shadow: 0px 4px 12px 0px hsl(25 15% 15% / 0.08), 0px 1px 2px -1px hsl(25 15% 15% / 0.08);
-  --shadow-md: 0px 4px 12px 0px hsl(25 15% 15% / 0.08), 0px 2px 4px -1px hsl(25 15% 15% / 0.08);
-  --shadow-lg: 0px 4px 12px 0px hsl(25 15% 15% / 0.08), 0px 4px 6px -1px hsl(25 15% 15% / 0.08);
-  --shadow-xl: 0px 4px 12px 0px hsl(25 15% 15% / 0.08), 0px 8px 10px -1px hsl(25 15% 15% / 0.08);
-  --shadow-2xl: 0px 4px 12px 0px hsl(25 15% 15% / 0.20);
-  --tracking-normal: 0.01em;
-  --spacing: 0.25rem;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #3BC9DB;
+
+  --radius: 0.375rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  --tracking-normal: 0em;
+  --tracking-tight: -0.025em;
+
   --slide-width: calc(100% + 16px);
 }
 
@@ -61,8 +59,18 @@
   }
 }
 
+/* Dark mode */
+.dark {
+  --background: #111827;
+  --foreground: #ffffff;
+  --card: #1f2937;
+  --card-foreground: #ffffff;
+  --muted: #374151;
+  --muted-foreground: #9ca3af;
+  --border: #374151;
+}
+
 @theme inline {
-  /* Fonty - referencja do zmiennych z :root */
   --font-sans: var(--body-font);
   --font-heading: var(--heading-font);
 
@@ -85,28 +93,18 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-gold: var(--gold);
 
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-full: var(--radius-full);
 
-  --shadow-2xs: var(--shadow-2xs);
-  --shadow-xs: var(--shadow-xs);
   --shadow-sm: var(--shadow-sm);
   --shadow: var(--shadow);
   --shadow-md: var(--shadow-md);
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
-  --shadow-2xl: var(--shadow-2xl);
-
-  --tracking-tighter: calc(var(--tracking-normal) - 0.05em);
-  --tracking-tight: calc(var(--tracking-normal) - 0.025em);
-  --tracking-normal: var(--tracking-normal);
-  --tracking-wide: calc(var(--tracking-normal) + 0.025em);
-  --tracking-wider: calc(var(--tracking-normal) + 0.05em);
-  --tracking-widest: calc(var(--tracking-normal) + 0.1em);
 }
 
 /* Base */
@@ -120,8 +118,62 @@ html {
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans);
     letter-spacing: var(--tracking-normal);
   }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--secondary);
+  letter-spacing: var(--tracking-tight);
+}
+
+/* White text on dark backgrounds */
+.bg-secondary h1,
+.bg-secondary h2,
+.bg-secondary h3,
+.bg-secondary h4,
+.bg-secondary p,
+.bg-secondary span,
+.bg-secondary .text-secondary-foreground {
+  color: #ffffff;
+}
+
+/* Accent text */
+.text-accent-primary {
+  color: var(--primary);
+}
+
+/* Buttons - Travel style */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-lg);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  box-shadow: var(--shadow-xl);
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--secondary);
+  color: white;
 }
 
 /* Section spacing */
@@ -130,7 +182,7 @@ html {
   padding-bottom: 5rem;
 }
 
-/* Signature element: red underline accent on H2 */
+/* H2 accent underline */
 .h2-accent::after {
   content: "";
   display: block;
@@ -161,7 +213,7 @@ details summary {
   list-style: none;
 }
 
-/* Scrollbar */
+/* Scrollbar - light theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -178,10 +230,10 @@ details summary {
 
 ::selection {
   background-color: var(--primary);
-  color: var(--primary-foreground);
+  color: white;
 }
 
-/* Hero animations */
+/* Animations */
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -197,19 +249,17 @@ details summary {
   animation: fade-up 0.7s ease-out both;
 }
 
-@keyframes scroll {
-  0% {
+@keyframes bounce {
+  0%, 100% {
     transform: translateY(0);
-    opacity: 1;
   }
-  100% {
-    transform: translateY(12px);
-    opacity: 0;
+  50% {
+    transform: translateY(-8px);
   }
 }
 
-.animate-scroll {
-  animation: scroll 1.5s infinite;
+.animate-bounce {
+  animation: bounce 1s infinite;
 }
 
 @keyframes fade-in {
@@ -225,10 +275,33 @@ details summary {
   animation: fade-in 0.3s ease-out both;
 }
 
-/* ===========================================
-   TYPOGRAPHY OVERRIDES
-   Na końcu pliku, poza @layer - najwyższy priorytet
-   =========================================== */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading) !important;
+/* Image overlay */
+.image-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}
+
+.dark .image-overlay::after {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Reduced motion for users with vestibular disorders - WCAG 2.3.3 */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-bounce,
+  .animate-fade-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

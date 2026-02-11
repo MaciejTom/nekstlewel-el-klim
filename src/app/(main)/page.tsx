@@ -2,15 +2,8 @@
 
 import { useState } from "react"
 
-// Sections - reusing from shared components
-import { NavSection } from "@/components/sections/nav-section"
-import { HeroSection } from "@/components/sections/hero-section"
-import { HeroSplitSection } from "@/components/sections/hero-split-section"
-import { HeroSplitClean } from "@/components/sections/hero-split-clean"
-import { HeroVerdance } from "@/components/sections/hero-verdance"
-import { NavVerdance } from "@/components/sections/nav-verdance"
-import { NavKonstruktion } from "@/components/sections/nav-konstruktion"
-import { HeroKonstruktion } from "@/components/sections/hero-konstruktion"
+// Shared sections
+import { HeroTravel } from "@/components/sections/hero-travel"
 import { WhyUsSection } from "@/components/sections/why-us-section"
 import { ServicesEditorialSection } from "@/components/sections/services-editorial-section"
 import { GallerySection } from "@/components/sections/gallery-section"
@@ -22,10 +15,8 @@ import { FooterSection } from "@/components/sections/footer-section"
 
 // UI Components
 import { Lightbox } from "@/components/ui/lightbox"
-import { ControlPanel } from "@/components/ui/control-panel"
 
-// Content - remonter specific
-import { heroContent } from "@/content/remonter/hero"
+// Content
 import { whyUsContent } from "@/content/remonter/why-us"
 import { servicesEditorialContent } from "@/content/remonter/services-editorial"
 import { portfolioContent } from "@/content/remonter/portfolio"
@@ -49,15 +40,10 @@ const BRAND = {
   location: "Gorlice i okolice",
 }
 
-export default function RemonterPage() {
+export default function HomePage() {
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [lightboxIndex, setLightboxIndex] = useState(0)
   const projects = portfolioContent.projects
-
-  const openLightbox = (index: number) => {
-    setLightboxIndex(index % projects.length)
-    setLightboxOpen(true)
-  }
 
   const lightboxNext = () => {
     setLightboxIndex(prev => (prev + 1) % projects.length)
@@ -69,7 +55,14 @@ export default function RemonterPage() {
 
   return (
     <>
-      <ControlPanel />
+      {/* Skip link for keyboard navigation - WCAG 2.4.1 */}
+      <a
+        href="#content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-md focus:shadow-lg"
+      >
+        Przejdź do treści
+      </a>
+
       <Lightbox
         isOpen={lightboxOpen}
         onClose={() => setLightboxOpen(false)}
@@ -79,89 +72,61 @@ export default function RemonterPage() {
         onPrev={lightboxPrev}
       />
 
-      <main className="selection:bg-primary/20 selection:text-primary">
-        <NavSection
-          brandName={BRAND.name}
-          brandLetter={BRAND.letter}
-          brandLogo={BRAND.logo}
-          phone={BRAND.phone}
-          phoneFormatted={BRAND.phoneFormatted}
-          homeHref={BRAND.homeHref}
-        />
-        <HeroSplitSection
-          headline={heroContent.headline}
-          headlineAccent={heroContent.headlineAccent}
-          region="Gorlice i okolice"
-          description={heroContent.subtitle}
-          ctaPrimary={{ text: "Zadzwoń: 692 243 186", href: "#kontakt" }}
+      <main>
+        <HeroTravel
+          brandName="EL"
+          brandAccent="KLIM"
+          badge="Fotowoltaika & Elektryka"
+          headline="Mała firma, duże realizacje. Od domu po farmę PV."
+          headlineAccent="Od domu po farmę PV."
+          description="Dzwonisz do właściciela, nie do call center. Ja wyceniam, ekipa montuje, ja odpowiadam. Gorlice i okolice."
+          ctaPrimary={{ text: "Zadzwoń: 692 243 186", href: "tel:692243186" }}
           ctaSecondary={{ text: "Zobacz realizacje", href: "#realizacje" }}
-          image="/images/el-klim/hero2.jpg"
-          imageAlt="EL-KLIM - fotowoltaika i instalacje elektryczne"
-          phone={BRAND.phone}
-          badge={heroContent.badge}
-        />
-
-        {/* ========== WARIANT 2: Verdance style ========== */}
-        <NavVerdance
-          brandName="Verdance"
-          phone="5551234567"
-          phoneFormatted="Inquire"
-          links={[
-            { label: "About", href: "#about" },
-            { label: "Services", href: "#services" },
-            { label: "Gallery", href: "#gallery" },
-            { label: "Contact", href: "#contact" },
+          stats={[
+            { value: "15", label: "Lat doświadczenia" },
+            { value: "50+", label: "Instalacji" },
           ]}
-        />
-        <HeroVerdance
-          badge="Handcrafted Excellence"
-          headline={"The Art of\nFine Living"}
-          headlineAccent="Fine Living"
-          description="We design and craft bespoke furniture that transforms spaces into sanctuaries. Every curve, every joint, every finish tells a story of uncompromising quality."
-          ctaPrimary={{ text: "View Collection", href: "#gallery" }}
-          image="https://lh3.googleusercontent.com/aida-public/AB6AXuBe65jMWXksntvRIY3CQywhYL0d50a8TwBVWRmqxlGYnP7gBxRTXigdAEPgKeSXK9kwibMS83sxFK7hgop0F_AbsLejk5Rx9tEte4vmdH3TK6i9luNJNgVQhrT-RzDjTy4qVAUCNbL_OJ1qnzPyrh7-b8Lx3J5VMe45hRgFBi7byg4AKq1Y8U3-Vr6-tU79OXRRoKzKOXJbkXz7P7J9eyR6EtXAqspWewFiF6Ak_h_nTP7o_CbsYLQT-oDG3zv1kLMGrszvl17vHI8"
-          imageAlt="Luxurious living room"
-        />
-
-        {/* ========== WARIANT 3: Konstruktion X style ========== */}
-        <NavKonstruktion
-          brandName="Konstruktion X"
-          phoneFormatted="Get a quote"
-        />
-        <HeroKonstruktion
-          headline={"Creating spaces\nthat inspire"}
-          description="We design functional and inviting interiors with precision to bring your vision to life through our expertise in real estate solutions."
-          ctaPrimary={{ text: "Get a quote", href: "#kontakt" }}
-          ctaSecondary={{ text: "Learn more", href: "#about" }}
-          image="https://lh3.googleusercontent.com/aida-public/AB6AXuC8isy9WrbO2AZMZOCxnGqdtPiqQ5BGd_ggPKd6hZ4NT7NgaMobCcjvlYrZLTlQbupLr3iVKnOmzSCN8ghRkRblY5EVCCqiJJHtt-gWbApVl3x5VkgWkJbNsdPRzYGkQSeU1dDUf8lEVL3Ds5J5v1vBEp8ynifidwki7L0vPvI7gnbLyQbdD102hipTpuKCHR2oqtaNb_-0_1lPbakRuyyDyeHvwhqCg_DkCKF0KiaSm7s3czLqb2tQbUO692PPiasLUtDf2ZAr4Y3F"
+          navLinks={[
+            { label: "Dlaczego my", href: "#dlaczego" },
+            { label: "Usługi", href: "#uslugi" },
+            { label: "Realizacje", href: "#realizacje" },
+            { label: "Proces", href: "#proces" },
+            { label: "Opinie", href: "#opinie" },
+            { label: "FAQ", href: "#faq" },
+          ]}
+          navCta={{ text: "Kontakt", href: "#kontakt" }}
+          image="/images/el-klim/hero3.jpg"
+          imageAlt="EL-KLIM - instalacja fotowoltaiczna"
         />
 
-        <WhyUsSection
-          content={whyUsContent}
-          iconMap={{
-            Handshake: "/images/remonter/icons/Whisk_142f20ca50ad58f8f334cc4ab808b9fedr-removebg-preview.webp",
-            Clock: "/images/remonter/icons/4-removebg-preview.webp",
-            Wrench: "/images/remonter/icons/3-removebg-preview.webp",
-            MapPin: "/images/remonter/icons/2-removebg-preview.webp",
-          }}
-        />
-        <ServicesEditorialSection id="uslugi" content={servicesEditorialContent} />
-        <GallerySection content={portfolioContent} />
-        <ProcessSection content={processContent} />
-        <ReviewsSection content={reviewsContent} />
-        <FaqSection content={faqContent} />
-        <ContactSection content={contactContent} />
-        <FooterSection
-          brandName={BRAND.name}
-          brandDescription={BRAND.description}
-          badge={BRAND.badge}
-          phone={BRAND.phone}
-          phoneFormatted={BRAND.phoneFormatted}
-          hours={contactContent.hours}
-          location={BRAND.location}
-          copyright={BRAND.copyright}
-          whatsappNumber={BRAND.whatsappNumber}
-        />
+        <div id="content">
+          <WhyUsSection
+            content={whyUsContent}
+            iconMap={{
+              Phone: "/images/el-klim/icons/c75dd17e-54f6-4911-87af-a7794021196c-removebg-preview.png",
+              Sun: "/images/el-klim/icons/a6a67a24-5bce-4515-8162-509fce358a63-removebg-preview.png",
+              Zap: "/images/el-klim/icons/dea03f13-dcba-498a-a45e-40f52102dba0-removebg-preview.png",
+            }}
+            iconSize={220}
+          />
+          <ServicesEditorialSection id="uslugi" content={servicesEditorialContent} />
+          <GallerySection content={portfolioContent} />
+          <ProcessSection content={processContent} />
+          <ReviewsSection content={reviewsContent} />
+          <FaqSection content={faqContent} />
+          <ContactSection content={contactContent} />
+          <FooterSection
+            brandName={BRAND.name}
+            brandDescription={BRAND.description}
+            badge={BRAND.badge}
+            phone={BRAND.phone}
+            phoneFormatted={BRAND.phoneFormatted}
+            hours={contactContent.hours}
+            location={BRAND.location}
+            copyright={BRAND.copyright}
+            whatsappNumber={BRAND.whatsappNumber}
+          />
+        </div>
       </main>
     </>
   )
