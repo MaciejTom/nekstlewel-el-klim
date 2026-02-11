@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { ChevronDown, Award, Zap } from "lucide-react"
+import { ChevronDown, Award, Zap, Sun } from "lucide-react"
 
 interface HeroTravelProps {
   brandName?: string
@@ -66,9 +66,10 @@ export function HeroTravel({
         {/* Main content */}
         <main className="flex flex-col justify-center space-y-6 max-w-xl mt-12 md:mt-0">
           {badge && (
-            <span className="inline-block text-sm font-medium text-primary tracking-wide">
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary border border-primary/20 px-4 py-2 rounded-sm text-sm font-semibold w-fit">
+              <Sun className="w-4 h-4" />
               {badge}
-            </span>
+            </div>
           )}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-secondary">
             {renderHeadline()}
