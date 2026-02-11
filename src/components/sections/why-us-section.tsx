@@ -17,14 +17,20 @@ const defaultIconImageMap: Record<string, string> = {
 interface WhyUsSectionProps {
   content?: typeof defaultWhyUsContent
   iconMap?: Record<string, string>
+  iconSize?: number
 }
 
 export function WhyUsSection({
   content = defaultWhyUsContent,
   iconMap = defaultIconImageMap,
+  iconSize = 140,
 }: WhyUsSectionProps) {
   const whyUsContent = content
   const iconImageMap = iconMap
+
+  // Calculate container size based on icon size
+  const containerSize = Math.round(iconSize * 1.15)
+
   return (
     <section id="dlaczego" className="bg-muted/40 py-32 relative overflow-hidden">
       {/* Background decoration */}
@@ -41,14 +47,17 @@ export function WhyUsSection({
         </div>
 
         {/* USP grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
           {whyUsContent.services.map((usp, index) => {
             const iconSrc = iconImageMap[usp.icon] || iconImageMap.Clock
 
             return (
               <div key={index} className="group transition-all duration-300 flex flex-col items-center text-center gap-6 hover:-translate-y-2">
                 {/* Icon Container */}
-                <div className="relative w-40 h-40 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                <div
+                  className="relative flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-500"
+                  style={{ width: containerSize, height: containerSize }}
+                >
                    {/* Paint accent */}
                    <div className="absolute inset-0 flex items-center justify-center -z-10">
                       <svg viewBox="0 0 200 200" className="w-[180%] h-[180%] text-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" fill="currentColor">
@@ -62,9 +71,9 @@ export function WhyUsSection({
                    <Image
                      src={iconSrc}
                      alt={usp.title}
-                     width={140}
-                     height={140}
-                     sizes="(max-width: 768px) 100px, 140px"
+                     width={iconSize}
+                     height={iconSize}
+                     sizes={`(max-width: 768px) ${Math.round(iconSize * 0.7)}px, ${iconSize}px`}
                      className="w-full h-full object-contain drop-shadow-2xl relative z-10"
                    />
                 </div>

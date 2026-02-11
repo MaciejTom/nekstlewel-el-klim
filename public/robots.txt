@@ -1,6 +1,6 @@
-# Robots.txt for REMONTER
+# Robots.txt for EL-KLIM
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://remonter.pl/sitemap.xml
+Sitemap: https://el-klim.pl/sitemap.xml

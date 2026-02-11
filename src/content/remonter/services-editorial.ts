@@ -18,8 +18,8 @@ export const servicesEditorialContent: ServiceEditorialContent = {
         "Zgłoszenie do zakładu energetycznego",
         "Serwis gwarancyjny",
       ],
-      image: "/images/el-klim/1.jpg",
-      imageAlt: "Instalacja fotowoltaiczna na dachu",
+      image: "/images/el-klim/dom-dach.png",
+      imageAlt: "Instalacja fotowoltaiczna na dachu domu",
     },
     {
       icon: "construction",
@@ -32,8 +32,8 @@ export const servicesEditorialContent: ServiceEditorialContent = {
         "Naprawy i awarie",
         "Przeglądy i pomiary",
       ],
-      image: "/images/el-klim/1.jpg",
-      imageAlt: "Instalacja elektryczna",
+      image: "/images/el-klim/rozdzielnica.png",
+      imageAlt: "Rozdzielnica elektryczna",
     },
     {
       icon: "stairs",
@@ -46,8 +46,8 @@ export const servicesEditorialContent: ServiceEditorialContent = {
         "Instalacje odgromowe",
         "Teletechnika",
       ],
-      image: "/images/el-klim/1.jpg",
-      imageAlt: "Instalacja SAP",
+      image: "/images/el-klim/inwerter.png",
+      imageAlt: "Inwerter Huawei",
     },
   ],
 

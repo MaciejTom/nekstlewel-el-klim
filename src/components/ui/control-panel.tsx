@@ -193,7 +193,6 @@ export function ControlPanel() {
 
     navigator.clipboard.writeText(css)
     alert('Skopiowano do schowka!\n\n' + css)
-    console.log('Eksportowany motyw:', theme)
   }
 
   const ColorSwatch = ({ color, isActive, onClick, size = 'normal' }: { color: string; isActive: boolean; onClick: () => void; size?: 'normal' | 'small' }) => (

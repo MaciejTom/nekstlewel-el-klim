@@ -1,20 +1,4 @@
 import type { Metadata } from "next";
-import { Manrope, Open_Sans } from "next/font/google";
-import "./globals.css";
-
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin", "latin-ext"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
-
-const openSans = Open_Sans({
-  variable: "--font-open-sans",
-  subsets: ["latin", "latin-ext"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://el-klim.pl"),
@@ -49,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl" suppressHydrationWarning>
-      <body className={`${manrope.variable} ${openSans.variable} font-sans antialiased`}>
+      <body>
         {children}
       </body>
     </html>
