@@ -12,6 +12,7 @@ export interface ReviewItem {
 
 export interface ReviewsContent {
   title: string
+  subtitle?: string
   reviews: ReviewItem[]
   bottomLink?: { text: string }
 }

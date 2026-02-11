@@ -19,15 +19,22 @@ export function ReviewsSection({ content }: ReviewsSectionProps) {
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight h2-accent-center">
             {content.title}
           </h2>
+          {content.subtitle && (
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg mt-6">
+              {content.subtitle}
+            </p>
+          )}
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
           {content.reviews.map((review, index) => (
             <div
               key={index}
-              className={`group bg-card border border-border rounded-sm p-8 transition-all duration-300 hover:border-primary/50 hover:-translate-y-1 ${
-                review.featured ? "lg:col-span-1 ring-1 ring-primary/20" : ""
+              className={`group bg-card border rounded-sm p-8 transition-all duration-300 hover:-translate-y-1 ${
+                review.featured
+                  ? "border-primary/30 ring-2 ring-primary/20 shadow-lg scale-105 relative z-10"
+                  : "border-border hover:border-primary/50"
               }`}
             >
               {/* Stars */}
@@ -59,14 +66,6 @@ export function ReviewsSection({ content }: ReviewsSectionProps) {
           ))}
         </div>
 
-        {/* Bottom text */}
-        {content.bottomLink && (
-          <div className="text-center mt-12">
-            <p className="text-muted-foreground">
-              {content.bottomLink.text}
-            </p>
-          </div>
-        )}
       </div>
     </section>
   )
