@@ -109,7 +109,7 @@ export default function ElKlimPage() {
               Sun: "/images/el-klim/icons/a6a67a24-5bce-4515-8162-509fce358a63-removebg-preview.png",
               Zap: "/images/el-klim/icons/dea03f13-dcba-498a-a45e-40f52102dba0-removebg-preview.png",
             }}
-            iconSize={220}
+            iconSize={280}
           />
           <ServicesEditorialSection id="uslugi" content={servicesEditorialContent} />
           <GallerySection content={portfolioContent} />
