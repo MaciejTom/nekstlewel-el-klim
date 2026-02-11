@@ -51,25 +51,42 @@ export function HeroTravel({
   }
 
   return (
-    <section className="min-h-screen flex flex-col md:flex-row">
-      {/* Left side - Content */}
-      <div className="w-full md:w-[42%] min-h-screen flex flex-col justify-between px-8 md:px-12 lg:px-16 py-8 md:py-12 relative z-10 bg-background">
-        {/* Logo */}
-        <header>
+    <section className="min-h-screen flex flex-col md:flex-row relative">
+      {/* Unified Header - Logo + Nav */}
+      <header className="fixed md:absolute top-0 left-0 right-0 z-50 px-6 md:px-12 py-3 md:py-5 flex justify-between items-center bg-background/95 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none border-b border-border/50 md:border-none">
           <a href="/" className="block">
             <Image
-              src="/images/el-klim/logo.png"
+              src="/images/el-klim/image-Photoroom.png"
               alt="EL-KLIM - Montaż Serwis"
-              width={180}
-              height={60}
-              className="h-12 md:h-14 w-auto"
+              width={280}
+              height={90}
+              className="h-16 md:h-20 lg:h-24 w-auto"
               priority
             />
           </a>
-        </header>
+          <nav className="flex items-center space-x-6 md:space-x-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-secondary md:text-white font-medium hover:text-primary transition-colors hidden sm:block md:drop-shadow-md"
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href={navCta.href}
+              className="border border-secondary md:border-white text-secondary md:text-white px-5 py-2 rounded-full hover:bg-primary hover:border-primary hover:text-white transition-all duration-200 font-medium md:drop-shadow-md"
+            >
+              {navCta.text}
+            </a>
+          </nav>
+      </header>
 
+      {/* Left side - Content */}
+      <div className="w-full md:w-[45%] min-h-screen flex flex-col justify-center px-6 md:px-12 pt-28 md:pt-36 pb-8 md:pb-12 relative z-10 bg-background">
         {/* Main content */}
-        <main className="flex flex-col justify-center space-y-6 max-w-xl mt-12 md:mt-0">
+        <main className="flex flex-col justify-center space-y-6 max-w-xl">
           {badge && (
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary border border-primary/20 px-4 py-2 rounded-sm text-sm font-semibold w-fit">
               <Sun className="w-4 h-4" />
@@ -129,8 +146,8 @@ export function HeroTravel({
           )}
         </main>
 
-        {/* Scroll indicator - jedyna animacja w hero */}
-        <footer className="hidden md:block">
+        {/* Scroll indicator */}
+        <div className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2">
           <button
             onClick={() => document.getElementById("content")?.scrollIntoView({ behavior: "smooth" })}
             className="text-muted-foreground hover:text-primary transition-colors"
@@ -138,30 +155,11 @@ export function HeroTravel({
           >
             <ChevronDown className="w-10 h-10 animate-bounce" />
           </button>
-        </footer>
+        </div>
       </div>
 
-      {/* Right side - Image with Nav overlay */}
-      <div className="w-full md:w-[58%] h-[50vh] md:h-screen relative">
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/40 to-transparent z-10 pointer-events-none" />
-        <nav className="absolute top-0 right-0 w-full p-8 md:p-12 flex justify-end items-center space-x-8 z-20">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-white font-medium hover:text-primary transition-colors hidden sm:block drop-shadow-md"
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href={navCta.href}
-            className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-secondary transition-all duration-200 font-medium drop-shadow-md"
-          >
-            {navCta.text}
-          </a>
-        </nav>
-
+      {/* Right side - Image */}
+      <div className="w-full md:w-[55%] h-[50vh] md:h-screen relative order-first md:order-last">
         <div className="absolute inset-0">
           <Image
             src={image}
