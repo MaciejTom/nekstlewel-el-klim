@@ -146,8 +146,8 @@ export function ContactSection({ content = defaultContactContent }: ContactSecti
           <h3 className="text-3xl font-bold text-foreground mb-8">{contactContent.formTitle}</h3>
 
           {isSuccess ? (
-            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-6 text-center">
-              <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-6 text-center" role="status" aria-live="polite">
+              <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" aria-hidden="true" />
               <h4 className="text-xl font-bold text-foreground mb-2">Wiadomość wysłana!</h4>
               <p className="text-muted-foreground">Odezwę się najszybciej jak to możliwe.</p>
             </div>
@@ -160,7 +160,7 @@ export function ContactSection({ content = defaultContactContent }: ContactSecti
                   return (
                     <div key={i} className="space-y-2">
                       <label className="block text-sm font-semibold text-foreground" htmlFor={`contact-${name}`}>
-                        {field.label} <span className="text-primary">*</span>
+                        {field.label} <span className="text-primary" aria-hidden="true">*</span><span className="sr-only">(wymagane)</span>
                       </label>
                       <input
                         className={`w-full px-4 py-3 bg-muted border text-foreground rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none ${
@@ -176,8 +176,8 @@ export function ContactSection({ content = defaultContactContent }: ContactSecti
                         required
                       />
                       {hasError && (
-                        <p className="text-red-500 text-xs flex items-center gap-1">
-                          <AlertCircle className="w-3 h-3" />
+                        <p className="text-red-500 text-xs flex items-center gap-1" role="alert" aria-live="polite">
+                          <AlertCircle className="w-3 h-3" aria-hidden="true" />
                           {errors[name]}
                         </p>
                       )}
@@ -192,7 +192,7 @@ export function ContactSection({ content = defaultContactContent }: ContactSecti
                 return (
                   <div key={i} className="space-y-2">
                     <label className="block text-sm font-semibold text-foreground" htmlFor={`contact-${name}`}>
-                      {field.label} <span className="text-primary">*</span>
+                      {field.label} <span className="text-primary" aria-hidden="true">*</span><span className="sr-only">(wymagane)</span>
                     </label>
                     {field.type === 'textarea' ? (
                       <textarea

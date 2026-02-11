@@ -31,11 +31,12 @@ export function ReviewsSection({ content }: ReviewsSectionProps) {
               }`}
             >
               {/* Stars */}
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-1 mb-4" role="img" aria-label={`Ocena: ${review.rating} z 5 gwiazdek`}>
                 {Array.from({ length: review.rating }).map((_, i) => (
                   <Star
                     key={i}
                     className="w-5 h-5 fill-primary text-primary"
+                    aria-hidden="true"
                   />
                 ))}
               </div>

@@ -273,3 +273,21 @@ details summary {
 .dark .image-overlay::after {
   background: rgba(0, 0, 0, 0.3);
 }
+
+/* Reduced motion for users with vestibular disorders - WCAG 2.3.3 */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-bounce,
+  .animate-fade-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -49,14 +49,14 @@ export function GallerySlider({ projects, onImageClick }: GallerySliderProps) {
       <button
         onClick={goPrev}
         aria-label="Poprzednie zdjęcie"
-        className="absolute left-0 md:-left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-primary text-primary-foreground rounded-full shadow-lg flex items-center justify-center hover:bg-primary/80 transition-all hover:scale-110"
+        className="absolute left-0 md:-left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 md:w-12 md:h-12 bg-primary text-primary-foreground rounded-full shadow-lg flex items-center justify-center hover:bg-primary/80 transition-all hover:scale-110"
       >
         <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
       </button>
       <button
         onClick={goNext}
         aria-label="Następne zdjęcie"
-        className="absolute right-0 md:-right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-primary text-primary-foreground rounded-full shadow-lg flex items-center justify-center hover:bg-primary/80 transition-all hover:scale-110"
+        className="absolute right-0 md:-right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 md:w-12 md:h-12 bg-primary text-primary-foreground rounded-full shadow-lg flex items-center justify-center hover:bg-primary/80 transition-all hover:scale-110"
       >
         <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
       </button>
@@ -194,9 +194,10 @@ export function GallerySection({ content = defaultPortfolioContent }: GallerySec
           <a
             href="#kontakt"
             className="inline-flex items-center gap-3 text-primary hover:text-foreground transition-colors group"
+            aria-label="Napisz do nas jeśli chcesz podobny efekt - przejdź do formularza kontaktowego"
           >
             <span className="text-lg font-medium">Chcesz podobny efekt?</span>
-            <span className="bg-primary text-primary-foreground px-6 py-3 font-bold tracking-widest uppercase text-sm group-hover:bg-foreground transition-colors">
+            <span className="bg-primary text-primary-foreground px-6 py-3 font-bold tracking-widest uppercase text-sm group-hover:bg-foreground transition-colors" aria-hidden="true">
               Napisz
             </span>
           </a>

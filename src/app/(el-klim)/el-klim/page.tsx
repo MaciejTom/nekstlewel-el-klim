@@ -57,6 +57,14 @@ export default function ElKlimPage() {
 
   return (
     <>
+      {/* Skip link for keyboard navigation - WCAG 2.4.1 */}
+      <a
+        href="#content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-md focus:shadow-lg"
+      >
+        Przejdź do treści
+      </a>
+
       <Lightbox
         isOpen={lightboxOpen}
         onClose={() => setLightboxOpen(false)}
@@ -81,8 +89,12 @@ export default function ElKlimPage() {
             { value: "50+", label: "Instalacji" },
           ]}
           navLinks={[
+            { label: "Dlaczego my", href: "#dlaczego" },
             { label: "Usługi", href: "#uslugi" },
             { label: "Realizacje", href: "#realizacje" },
+            { label: "Proces", href: "#proces" },
+            { label: "Opinie", href: "#opinie" },
+            { label: "FAQ", href: "#faq" },
           ]}
           navCta={{ text: "Kontakt", href: "#kontakt" }}
           image="/images/el-klim/hero3.jpg"
