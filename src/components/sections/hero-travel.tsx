@@ -55,37 +55,38 @@ export function HeroTravel({
     <section className="min-h-screen flex flex-col md:flex-row">
       {/* Left side - Content (42%) */}
       <div className="w-full md:w-[42%] min-h-screen flex flex-col justify-between px-8 md:px-12 lg:px-16 py-8 md:py-12 relative z-10 bg-background">
-        {/* Logo - Bebas Neue style like original */}
+        {/* Logo - original image */}
         <header>
-          <div className="font-[family-name:var(--font-bebas)] leading-none">
-            <div className="text-5xl md:text-6xl tracking-wider">
-              <span className="text-primary">{brandName}</span>
-              <span className="text-secondary">{brandAccent}</span>
-            </div>
-            <div className="text-sm md:text-base tracking-[0.3em] text-secondary text-right -mt-1">
-              MONTAŻ SERWIS
-            </div>
-          </div>
+          <a href="/" className="block">
+            <Image
+              src="/images/el-klim/logo.png"
+              alt="EL-KLIM - Montaż Serwis"
+              width={180}
+              height={60}
+              className="h-12 md:h-14 w-auto"
+              priority
+            />
+          </a>
         </header>
 
         {/* Main content */}
         <main className="flex flex-col justify-center space-y-6 max-w-xl mt-12 md:mt-0">
           {badge && (
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary border border-primary/20 px-4 py-2 rounded-sm text-sm font-semibold w-fit">
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary border border-primary/20 px-4 py-2 rounded-sm text-sm font-semibold w-fit animate-fade-up">
               <Sun className="w-4 h-4" />
               {badge}
             </div>
           )}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-secondary">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-secondary animate-blur-in stagger-1">
             {renderHeadline()}
           </h1>
-          <p className="text-muted-foreground text-base leading-relaxed">
+          <p className="text-muted-foreground text-base leading-relaxed animate-fade-up stagger-2">
             {description}
           </p>
-          <div className="pt-4 flex flex-wrap gap-4">
+          <div className="pt-4 flex flex-wrap gap-4 animate-fade-up stagger-3">
             <a
               href={ctaPrimary.href}
-              className="inline-block bg-primary text-primary-foreground font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:opacity-90 transition-all duration-200 transform hover:-translate-y-0.5"
+              className="inline-block bg-primary text-primary-foreground font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:opacity-90 transition-all duration-200 transform hover:-translate-y-0.5 animate-pulse-glow"
             >
               {ctaPrimary.text}
             </a>
@@ -101,13 +102,13 @@ export function HeroTravel({
           </div>
 
           {stats && stats.length > 0 && (
-            <div className="flex items-center gap-8 pt-6 border-t border-border mt-4">
+            <div className="flex items-center gap-8 pt-6 border-t border-border mt-4 animate-fade-up stagger-4">
               <div className="flex items-center gap-4">
-                <div className="bg-primary/15 p-3 rounded-xl text-primary">
+                <div className="bg-primary/15 p-3 rounded-xl text-primary animate-float">
                   <Award className="w-7 h-7" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-black text-2xl leading-none text-secondary">{stats[0].value}</span>
+                  <span className="font-black text-2xl leading-none text-secondary counter">{stats[0].value}</span>
                   <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{stats[0].label}</span>
                 </div>
               </div>
@@ -115,11 +116,11 @@ export function HeroTravel({
                 <>
                   <div className="w-px h-12 bg-border"></div>
                   <div className="flex items-center gap-4">
-                    <div className="bg-primary/15 p-3 rounded-xl text-primary">
+                    <div className="bg-primary/15 p-3 rounded-xl text-primary animate-float" style={{ animationDelay: '0.5s' }}>
                       <Zap className="w-7 h-7" />
                     </div>
                     <div className="flex flex-col">
-                      <span className="font-black text-2xl leading-none text-secondary">{stats[1].value}</span>
+                      <span className="font-black text-2xl leading-none text-secondary counter">{stats[1].value}</span>
                       <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{stats[1].label}</span>
                     </div>
                   </div>
